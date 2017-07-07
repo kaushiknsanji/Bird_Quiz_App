@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="quiz_hint_image_height">400dp</dimen>
+    <dimen name="rad_btn_left_margin">16dp</dimen>
+    <dimen name="rad_btn_right_margin">16dp</dimen>
+    <dimen name="rad_btn_bottom_margin">16dp</dimen>
+</resources>

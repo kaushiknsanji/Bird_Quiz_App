@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="5dp" />
+            <size android:height="5dp" />
+            <gradient
+                android:angle="90"
+                android:centerColor="@color/pblProgressBarShadeBlueGrey700"
+                android:centerY="0.5"
+                android:endColor="@color/pblProgressBarShadeBlueGrey500"
+                android:startColor="@color/pblProgressBarShadeBlueGrey900"
+                android:type="linear" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/pblProgressBarStrokeDeepOrangeA400" />
+        </shape>
+    </item>
+
+    <item android:id="@android:id/secondaryProgress">
+        <scale android:scaleWidth="100%">
+            <shape>
+                <corners android:radius="5dp" />
+                <size android:height="5dp" />
+                <solid android:color="@color/pblProgressBarShadeDeepOrange200" />
+                <stroke
+                    android:width="2dp"
+                    android:color="@color/pblProgressBarStrokeDeepOrangeA400" />
+            </shape>
+        </scale>
+    </item>
+
+    <item android:id="@android:id/progress">
+        <scale android:scaleWidth="100%">
+            <shape>
+                <corners android:radius="5dp" />
+                <size android:height="5dp" />
+                <gradient
+                    android:angle="90"
+                    android:centerColor="@color/pblProgressBarShadeDeepOrangeA200"
+                    android:centerY="0.5"
+                    android:endColor="@color/pblProgressBarShadeDeepOrangeA100"
+                    android:startColor="@color/pblProgressBarStrokeDeepOrangeA400"
+                    android:type="linear" />
+                <stroke
+                    android:width="2dp"
+                    android:color="@color/pblProgressBarStrokeDeepOrangeA400" />
+            </shape>
+        </scale>
+    </item>
+
+</layer-list>

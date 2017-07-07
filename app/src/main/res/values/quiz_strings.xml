@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="question_array">
+        <item>Which of the following flock together in unison creating wave like floating patterns (&lt;b&gt;Murmurations&lt;/b&gt;) in the sky</item>
+        <item>A bird with an alarming call that goes by the famous saying &lt;b&gt;did-he-do-it&lt;/b&gt;</item>
+        <item>Birds that can walk on floating vegetation with ease earning them the name of &lt;b&gt;Lily Trotter&lt;/b&gt;</item>
+        <item>The bird that swims submerged with its head and long neck protruding from water like a snake. Hence also known as &lt;b&gt;Snakebird&lt;/b&gt;</item>
+        <item>Which of these have its beak designed to sift animal matter, algae from water with ease</item>
+        <item>The first Indian Bird to be named after late &lt;b&gt;Dr. Salim Ali&lt;/b&gt; (it\'s scientific name bears the stamp)</item>
+        <item>The bird that has a colorful beak (also known as &lt;b&gt;Sea Parrot&lt;/b&gt;/ &lt;b&gt;Clowns of the Sea&lt;/b&gt;) can catch more than 10 fish in succession and carry them crosswise in the bill to the nest</item>
+        <item>Bird that uses its beak to regulate body temperature by controlling the blood flowing through its beak</item>
+        <item>Bird that uses its wings like an umbrella to attract and hunt fish. This hunting method is also known as &lt;b&gt;Canopy Feeding&lt;/b&gt;</item>
+        <item>Bird that plunges into water to catch fish at speeds of 60MPH. As a result, it is popularly known as the &lt;b&gt;Missile bird&lt;/b&gt;</item>
+        <item>A Raptor Bird that soars up high in the air and stoops down onto the prey locked, generating speeds of around 200MPH before landing on the prey. Bird has earned the title of &lt;b&gt;Dive Bomb&lt;/b&gt; due to this act</item>
+        <item>A Raptor Bird that swiftly moves through the dense forest with all agility and acrobatics to plunge on the prey. These can fly through tiny spaces without losing any speed. Bird has earned the titles of &lt;b&gt;Master of Forest&lt;/b&gt; and &lt;b&gt;Master of Manoeuvrability&lt;/b&gt;</item>
+        <item>A seabird capable of travelling 10,000 miles in a single journey and circumnavigating the globe in 46 days using techniques called as &lt;b&gt;Dynamic Soaring&lt;/b&gt; and &lt;b&gt;Slope Soaring&lt;/b&gt; to cover great distances without flapping its enormous wings to stay aloft for long periods</item>
+        <item>Family of Birds that can fly backwards without relying on the assistance of wind &lt;b&gt;(Answer in Plural form)&lt;/b&gt;</item>
+        <item>&lt;b&gt;Bird of the Sun&lt;/b&gt;, that sees more daylight than any other due to its longest distance migration by any bird, travelling from its Arctic breeding grounds to its wintering grounds off of Antarctica, covering around 40,000km which is the farthest yearly journey of any bird</item>
+        <item>State bird of many states in India, known for its aerobatic displays during courtship with twists and turns culminating in a series of \'rolling\' motions</item>
+        <item>Undoubtedly, the most intelligent, bold, omnivorous bird, thievish by nature with great adaptability to human lifestyle</item>
+        <item>Which of these are &lt;b&gt;brood-parasites&lt;/b&gt; (birds that lay their eggs in the nests of other birds)</item>
+        <item>The bird that glides over the surface of water dipping its lower mandible(lower part of the beak) to catch fish</item>
+        <item>Which of these belong to the family of Parrots</item>
+        <item>Family of Birds known for being the fastest in flapping flight (AKA level flight/self-powered flight) without the assistance of the Wind or the Gravity &lt;b&gt;(Answer in Singular form)&lt;/b&gt;</item>
+        <item>World’s only flightless parrot which is also nocturnal</item>
+        <item>Which of these are flightless birds</item>
+        <item>The tallest of the flying birds on the planet</item>
+        <item>The largest of the Penguins</item>
+        <item>Bird with chisel like bills for boring into the wood to extract insects and excavate nest hole &lt;b&gt;(Answer in Singular form)&lt;/b&gt;</item>
+        <item>Bird that sews leaves together to make its nest &lt;b&gt;(Answer in Singular form, one word)&lt;/b&gt;</item>
+        <item>An extinct flightless bird that was endemic to the island of Mauritius &lt;b&gt;(Answer in Singular form)&lt;/b&gt;</item>
+        <item>Largest of the Kingfisher family known as the &lt;b&gt;Laughing Jackass&lt;/b&gt; due to its ringing laughter call used mainly to alert the flock of some danger and to mark territorial borders</item>
+        <item>Birds reputed to have remarkable habit of guiding humans and other Melliphagous (feeding on honey) animals to bees\’ nests</item>
+        <item>Family of Birds whose wings are designed as flippers. They are good swimmers and cannot fly &lt;b&gt;(Answer in Plural form)&lt;/b&gt;</item>
+        <item>Family of Birds known for their roofed nests, intricately designed with elaborate interweaving of grass or leaf fibers, having a narrow tube like entrance that opens upside down which is intentionally designed to ward of predators and parasitic birds &lt;b&gt;(Answer in Plural form)&lt;/b&gt;</item>
+        <item>Family of Birds known for their technique in eating bees after discharging the venom sac and stinger, by smacking the insect against a branch and rubbing it on a hard surface</item>
+        <item>Bird famously known as the &lt;b&gt;Brain-fever&lt;/b&gt; bird due to its loud, shrill, repetitive cry, holds a striking resemblance to Shikra (a sparrow hawk) in terms of its plumage, flight style and landing technique</item>
+        <item>The largest living bird on the planet</item>
+        <item>Bird regarded as the symbol of love and marriage in South East Asia especially in China, Japan and Korea</item>
+        <item>The National Bird of Uganda which is also represented in the National flag</item>
+        <item>The National Bird of India &lt;b&gt;(Answer in Singular form)&lt;/b&gt;</item>
+        <item>The largest bird of the Pigeon family that is currently existing</item>
+        <item>The fastest sprinting bird that is capable of flying that was once featured as a character from the Looney Tunes &lt;b&gt;(Answer in Singular form)&lt;/b&gt;</item>
+        <item>Although capable of flight, they prefer to jump/hop/sprint. Identify the birds accordingly</item>
+        <item>Bird that can mimic the exact call of Kookaburra, including many other bird calls as well as artificial sounds in their environment like the chainsaw, camera click and so on</item>
+        <item>The bird that lays the largest egg relative to its body size. This bird is flightless and does not have a tail &lt;b&gt;(Answer in Singular form)&lt;/b&gt;</item>
+        <item>The largest egg laying bird at present &lt;b&gt;(Answer in Singular form)&lt;/b&gt;</item>
+        <item>The extinct flightless bird known as the &lt;b&gt;Penguin of the North&lt;/b&gt; &lt;b&gt;(Answer in Singular form)&lt;/b&gt;</item>
+        <item>Which of these birds fly in V-formation</item>
+        <item>The largest egg laying bird that is extinct which was also the largest bird in its period</item>
+        <item>The terrestrial raptor also known as the &lt;b&gt;Snake Killer&lt;/b&gt;</item>
+        <item>Which of these birds have &lt;b&gt;Crest feathers&lt;/b&gt; (tuft of feathers on the crown of bird’s head)</item>
+        <item>Family of Birds that can rotate their head up to 270 degrees in each direction &lt;b&gt;(Answer in Plural form)&lt;/b&gt;</item>
+    </string-array>
+
+    <!-- For Question 1 -->
+    <string-array name="option_1_array">
+        <item>Pelicans</item>
+        <item>Ibis</item>
+        <item>Mynas</item>
+        <item>Starlings</item>
+    </string-array>
+    <string-array name="key_1_array">
+        <item>Starlings</item>
+    </string-array>
+    <string-array name="hint_1_array">
+        <item>https://www.petinfoclub.com/Images/Starling%%20in%%20colour%%20shutterstock_36832600.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 2 -->
+    <string-array name="option_2_array">
+        <item>Common Sandpiper</item>
+        <item>Black winged Stilt</item>
+        <item>Oriental Plover</item>
+        <item>Red-wattled Lapwing</item>
+    </string-array>
+    <string-array name="key_2_array">
+        <item>Red-wattled Lapwing</item>
+    </string-array>
+    <string-array name="hint_2_array">
+        <item>http://i1.treknature.com/photos/10187/lapwing.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 3 -->
+    <string-array name="option_3_array">
+        <item>Moorhen</item>
+        <item>Waterhen</item>
+        <item>Jacana</item>
+        <item>Coursers</item>
+    </string-array>
+    <string-array name="key_3_array">
+        <item>Jacana</item>
+    </string-array>
+    <string-array name="hint_3_array">
+        <item>http://www.hbw.com/sites/default/files/styles/ibc_1k/public/ibc/p/IMG_5325.JPG?itok=VXAtOQK3</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 4 -->
+    <string-array name="option_4_array">
+        <item>Cormorants</item>
+        <item>Darters</item>
+        <item>Herons</item>
+        <item>Grebes</item>
+    </string-array>
+    <string-array name="key_4_array">
+        <item>Darters</item>
+    </string-array>
+    <string-array name="hint_4_array">
+        <item>https://image.thmeythmey.com/pictures/2016/04/21/bird.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 5 -->
+    <string-array name="option_5_array">
+        <item>Open billed Storks</item>
+        <item>Flamingos</item>
+        <item>Stilt</item>
+        <item>Spoonbills</item>
+    </string-array>
+    <string-array name="key_5_array">
+        <item>Flamingos</item>
+        <item>Spoonbills</item>
+    </string-array>
+    <string-array name="hint_5_array">
+        <item>@drawable/question_5_collage</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 6 -->
+    <string-array name="option_6_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_6_array">
+        <item>Himalayan Forest Thrush</item>
+    </string-array>
+    <string-array name="hint_6_array">
+        <item>http://cdn.sci-news.com/images/enlarge2/image_3575_1e-Zoothera-salimalii.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 7 -->
+    <string-array name="option_7_array">
+        <item>Seagulls</item>
+        <item>Puffins</item>
+        <item>Macaws</item>
+        <item>Skimmers</item>
+    </string-array>
+    <string-array name="key_7_array">
+        <item>Puffins</item>
+    </string-array>
+    <string-array name="hint_7_array">
+        <item>http://randy.agencija-oskar.si/oskar/images/islk/islandija-ptica-puffin-pig.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 8 -->
+    <string-array name="option_8_array">
+        <item>Pelican</item>
+        <item>Toucan</item>
+        <item>Shoebill</item>
+        <item>Spoonbill</item>
+    </string-array>
+    <string-array name="key_8_array">
+        <item>Toucan</item>
+    </string-array>
+    <string-array name="hint_8_array">
+        <item>http://www.animalspot.net/wp-content/uploads/2016/02/Toco-Toucan-Pictures.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 9 -->
+    <string-array name="option_9_array">
+        <item>House Crow</item>
+        <item>Frigate Bird</item>
+        <item>Black Heron</item>
+        <item>Little Cormorant</item>
+    </string-array>
+    <string-array name="key_9_array">
+        <item>Black Heron</item>
+    </string-array>
+    <string-array name="hint_9_array">
+        <item>http://animalia-life.club/data_images/black-heron/black-heron2.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 10 -->
+    <string-array name="option_10_array">
+        <item>Great Cormorant</item>
+        <item>Blue footed Boobies</item>
+        <item>Cape Gannets</item>
+        <item>African Skimmer</item>
+    </string-array>
+    <string-array name="key_10_array">
+        <item>Cape Gannets</item>
+    </string-array>
+    <string-array name="hint_10_array">
+        <item>http://m3.i.pbase.com/o6/38/391838/1/119345973.nihHGGC6.GannetDive.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+
+    <!-- For Question 11 -->
+    <string-array name="option_11_array">
+        <item>Cape Gannets</item>
+        <item>Golden Eagle</item>
+        <item>Goshawk</item>
+        <item>Peregrine Falcon</item>
+    </string-array>
+    <string-array name="key_11_array">
+        <item>Peregrine Falcon</item>
+    </string-array>
+    <string-array name="hint_11_array">
+        <item>http://mendobrew.com/blog/wp-content/uploads/2013/04/Peregrine-falcon-diving.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 12 -->
+    <string-array name="option_12_array">
+        <item>Eagles</item>
+        <item>Falcons</item>
+        <item>Buzzards</item>
+        <item>Goshawks</item>
+    </string-array>
+    <string-array name="key_12_array">
+        <item>Goshawks</item>
+    </string-array>
+    <string-array name="hint_12_array">
+        <item>https://c2.staticflickr.com/8/7426/11891837883_ba2a793f8d_b.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 13 -->
+    <string-array name="option_13_array">
+        <item>Seagulls</item>
+        <item>Albatross</item>
+        <item>Arctic Tern</item>
+        <item>Bald Eagle</item>
+    </string-array>
+    <string-array name="key_13_array">
+        <item>Albatross</item>
+    </string-array>
+    <string-array name="hint_13_array">
+        <item>https://static.independent.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2013/11/17/21/17-Albatross-David-Osborn-A.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 14 -->
+    <string-array name="option_14_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_14_array">
+        <item>Hummingbirds</item>
+    </string-array>
+    <string-array name="hint_14_array">
+        <item>http://www.hummingbirdsplus.org/wp-content/uploads/2015/09/Attracting-Hummingbirds1.jpg</item>
+        <item>@string/default_textual_question_plural_hint</item>
+    </string-array>
+
+    <!-- For Question 15 -->
+    <string-array name="option_15_array">
+        <item>Penguins</item>
+        <item>Arctic Tern</item>
+        <item>Skuas</item>
+    </string-array>
+    <string-array name="key_15_array">
+        <item>Arctic Tern</item>
+    </string-array>
+    <string-array name="hint_15_array">
+        <item>http://www.arctictern.info/carsten/images/highres/carsten_egevang_1994.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 16 -->
+    <string-array name="option_16_array">
+        <item>Indian Paradise Flycatcher</item>
+        <item>White Breasted Kingfisher</item>
+        <item>Indian Roller</item>
+        <item>House Sparrow</item>
+    </string-array>
+    <string-array name="key_16_array">
+        <item>Indian Roller</item>
+    </string-array>
+    <string-array name="hint_16_array">
+        <item>http://clementfrancis.com/wp-content/uploads/2015/10/IndianRoller-Flt.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 17 -->
+    <string-array name="option_17_array">
+        <item>Cuckoo</item>
+        <item>Crow</item>
+        <item>Sparrow</item>
+        <item>Pigeon</item>
+    </string-array>
+    <string-array name="key_17_array">
+        <item>Crow</item>
+    </string-array>
+    <string-array name="hint_17_array">
+        <item>http://01271bfede0954168758-da1041207dde8e2d0a75af6fbedebedf.r83.cf1.rackcdn.com/20100919020250.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 18 -->
+    <string-array name="option_18_array">
+        <item>Cuckoo</item>
+        <item>Honeyguide</item>
+        <item>Cowbird</item>
+        <item>Coucal</item>
+    </string-array>
+    <string-array name="key_18_array">
+        <item>Cuckoo</item>
+        <item>Honeyguide</item>
+        <item>Cowbird</item>
+    </string-array>
+    <string-array name="hint_18_array">
+        <item>@drawable/question_18_collage</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 19 -->
+    <string-array name="option_19_array">
+        <item>Cape Gannets</item>
+        <item>Boobies</item>
+        <item>Skimmers</item>
+        <item>Skuas</item>
+    </string-array>
+    <string-array name="key_19_array">
+        <item>Skimmers</item>
+    </string-array>
+    <string-array name="hint_19_array">
+        <item>http://nc.audubon.org/sites/g/files/amh416/f/styles/hero_image/public/black_skimmers_bill_stripling.jpg?itok=rEDuqdvJ</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 20 -->
+    <string-array name="option_20_array">
+        <item>Parakeets</item>
+        <item>Lorikeets</item>
+        <item>Macaws</item>
+        <item>Puffins</item>
+    </string-array>
+    <string-array name="key_20_array">
+        <item>Parakeets</item>
+        <item>Lorikeets</item>
+        <item>Macaws</item>
+    </string-array>
+    <string-array name="hint_20_array">
+        <item>@drawable/question_20_collage</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 21 -->
+    <string-array name="option_21_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_21_array">
+        <item>Swift</item>
+    </string-array>
+    <string-array name="hint_21_array">
+        <item>http://fatbirder.com/photos/1789whiterumpedswift61485728896.jpg</item>
+        <item>@string/default_textual_question_singular_hint</item>
+    </string-array>
+
+    <!-- For Question 22 -->
+    <string-array name="option_22_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_22_array">
+        <item>Kakapo</item>
+    </string-array>
+    <string-array name="hint_22_array">
+        <item>http://nzbirdsonline.org.nz/sites/all/files/Kakapo_DvW2007.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 23 -->
+    <string-array name="option_23_array">
+        <item>Cassowary</item>
+        <item>Emu</item>
+        <item>Ostrich</item>
+        <item>Peacock</item>
+    </string-array>
+    <string-array name="key_23_array">
+        <item>Cassowary</item>
+        <item>Emu</item>
+        <item>Ostrich</item>
+    </string-array>
+    <string-array name="hint_23_array">
+        <item>@drawable/question_23_collage</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 24 -->
+    <string-array name="option_24_array">
+        <item>Ostrich</item>
+        <item>Sarus Crane</item>
+        <item>Cassowary</item>
+        <item>Dalmatian Pelican</item>
+    </string-array>
+    <string-array name="key_24_array">
+        <item>Sarus Crane</item>
+    </string-array>
+    <string-array name="hint_24_array">
+        <item>http://animalsbirds.com/wp-content/uploads/2016/07/Sarus-crane-Bird-Pictures-Images-HD-Wallpapers-29.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 25 -->
+    <string-array name="option_25_array">
+        <item>Little blue Penguin</item>
+        <item>Gentoo Penguin</item>
+        <item>Magellanic Penguin</item>
+        <item>Emperor Penguin</item>
+    </string-array>
+    <string-array name="key_25_array">
+        <item>Emperor Penguin</item>
+    </string-array>
+    <string-array name="hint_25_array">
+        <item>https://www.aboutanimals.com/images/emperor-penguins-820x507.jpg?d8bc0c</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 26 -->
+    <string-array name="option_26_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_26_array">
+        <item>Woodpecker</item>
+    </string-array>
+    <string-array name="hint_26_array">
+        <item>http://d2fbmjy3x0sdua.cloudfront.net/cdn/farfuture/6n11sc16h1uacEX2BjxCEVvabmjQt0iROPAbeDr5JMs/mtime:1486670177/sites/default/files/styles/article_hero_inline/public/42-56240394_0.jpg?itok=bOlFyPeE</item>
+        <item>@string/default_textual_question_singular_hint</item>
+    </string-array>
+
+    <!-- For Question 27 -->
+    <string-array name="option_27_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_27_array">
+        <item>Tailorbird</item>
+    </string-array>
+    <string-array name="hint_27_array">
+        <item>http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_720/images/live/p0/2l/dz/p02ldzpv.jpg</item>
+        <item>@string/default_textual_question_singular_hint</item>
+    </string-array>
+
+    <!-- For Question 28 -->
+    <string-array name="option_28_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_28_array">
+        <item>Dodo</item>
+    </string-array>
+    <string-array name="hint_28_array">
+        <item>https://neyven.files.wordpress.com/2013/01/dodo-1.jpg</item>
+        <item>@string/default_textual_question_singular_hint</item>
+    </string-array>
+
+    <!-- For Question 29 -->
+    <string-array name="option_29_array">
+        <item>Common Kingfisher</item>
+        <item>Pied Kingfisher</item>
+        <item>Giant Kingfisher</item>
+        <item>Laughing Kookaburra</item>
+    </string-array>
+    <string-array name="key_29_array">
+        <item>Laughing Kookaburra</item>
+    </string-array>
+    <string-array name="hint_29_array">
+        <item>http://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_kookaburra.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 30 -->
+    <string-array name="option_30_array">
+        <item>Bee-eaters</item>
+        <item>Honeyguides</item>
+    </string-array>
+    <string-array name="key_30_array">
+        <item>Honeyguides</item>
+    </string-array>
+    <string-array name="hint_30_array">
+        <item>http://www.outdoorphoto.community/gallery/data/523/NielCilli_474GreaterHoneyGuideMale4904e.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 31 -->
+    <string-array name="option_31_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_31_array">
+        <item>Penguins</item>
+    </string-array>
+    <string-array name="hint_31_array">
+        <item>http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Birds/A-G/emperor-penguin-colony.ngsversion.1412630284744.jpg</item>
+        <item>@string/default_textual_question_plural_hint</item>
+    </string-array>
+
+    <!-- For Question 32 -->
+    <string-array name="option_32_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_32_array">
+        <item>Weavers</item>
+    </string-array>
+    <string-array name="hint_32_array">
+        <item>https://qph.ec.quoracdn.net/main-qimg-a47e5f0ab3b3a354ffe7c1af3862fe3a-c</item>
+        <item>@string/default_textual_question_plural_hint</item>
+    </string-array>
+
+    <!-- For Question 33 -->
+    <string-array name="option_33_array">
+        <item>Bee-eaters</item>
+        <item>Flycatchers</item>
+        <item>Honeyguides</item>
+    </string-array>
+    <string-array name="key_33_array">
+        <item>Bee-eaters</item>
+    </string-array>
+    <string-array name="hint_33_array">
+        <item>https://upload.wikimedia.org/wikipedia/commons/9/96/Pair_of_Merops_apiaster_feeding.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 34 -->
+    <string-array name="option_34_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_34_array">
+        <item>Common hawk cuckoo</item>
+    </string-array>
+    <string-array name="hint_34_array">
+        <item>http://voices.nationalgeographic.com/files/2012/11/common-hawk-cuckoo-Dhritiman-Hore-950x633.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 35 -->
+    <string-array name="option_35_array">
+        <item>Ostrich</item>
+        <item>Sarus Crane</item>
+        <item>Cassowary</item>
+        <item>Dalmatian Pelican</item>
+    </string-array>
+    <string-array name="key_35_array">
+        <item>Ostrich</item>
+    </string-array>
+    <string-array name="hint_35_array">
+        <item>http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Birds/H-P/ostrich-running.ngsversion.1412640507670.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 36 -->
+    <string-array name="option_36_array">
+        <item>Mute Swan</item>
+        <item>Macaw</item>
+        <item>Puffin</item>
+        <item>Mandarin Duck</item>
+    </string-array>
+    <string-array name="key_36_array">
+        <item>Mandarin Duck</item>
+    </string-array>
+    <string-array name="hint_36_array">
+        <item>https://s-media-cache-ak0.pinimg.com/originals/b7/5b/66/b75b6643359cf6f77daa9c1b4b093d38.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 37 -->
+    <string-array name="option_37_array">
+        <item>Sarus Crane</item>
+        <item>Crowned Crane</item>
+        <item>Rhinoceros Hornbill</item>
+        <item>Peacock</item>
+    </string-array>
+    <string-array name="key_37_array">
+        <item>Crowned Crane</item>
+    </string-array>
+    <string-array name="hint_37_array">
+        <item>http://www.ownbyphotography.com/Crowned-Cranes.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 38 -->
+    <string-array name="option_38_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_38_array">
+        <item>Peacock</item>
+    </string-array>
+    <string-array name="hint_38_array">
+        <item>http://webneel.com/daily/sites/default/files/images/daily/07-2015/9-beautiful-peacock-photo.jpg</item>
+        <item>@string/default_textual_question_singular_hint</item>
+    </string-array>
+
+    <!-- For Question 39 -->
+    <string-array name="option_39_array">
+        <item>Nicobar Pigeon</item>
+        <item>Spotted Dove</item>
+        <item>Victoria Crowned Pigeon</item>
+        <item>Dodo</item>
+    </string-array>
+    <string-array name="key_39_array">
+        <item>Victoria Crowned Pigeon</item>
+    </string-array>
+    <string-array name="hint_39_array">
+        <item>https://c1.staticflickr.com/7/6101/7021907119_623686025a_k.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 40 -->
+    <string-array name="option_40_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_40_array">
+        <item>Roadrunner</item>
+    </string-array>
+    <string-array name="hint_40_array">
+        <item>http://i.imgur.com/aMwqRVb.jpg</item>
+        <item>@string/default_textual_question_singular_hint</item>
+    </string-array>
+
+    <!-- For Question 41 -->
+    <string-array name="option_41_array">
+        <item>Babblers</item>
+        <item>Toucan</item>
+        <item>Roadrunner</item>
+        <item>Ostrich</item>
+    </string-array>
+    <string-array name="key_41_array">
+        <item>Babblers</item>
+        <item>Toucan</item>
+        <item>Roadrunner</item>
+    </string-array>
+    <string-array name="hint_41_array">
+        <item>@drawable/question_41_collage</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 42 -->
+    <string-array name="option_42_array">
+        <item>Riflebird</item>
+        <item>Lyrebird</item>
+        <item>African Grey Parrot</item>
+        <item>Starling</item>
+    </string-array>
+    <string-array name="key_42_array">
+        <item>Lyrebird</item>
+    </string-array>
+    <string-array name="hint_42_array">
+        <item>http://1photo1day.com/wp-content/uploads/2016/06/Superb-lyrebird-in-Marysville-State-Forest-Australia-20160601.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 43 -->
+    <string-array name="option_43_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_43_array">
+        <item>Kiwi</item>
+    </string-array>
+    <string-array name="hint_43_array">
+        <item>http://s3.thingpic.com/images/KM/LkBTGF5MdmtT4P59NkbLotSB.jpeg</item>
+        <item>@string/default_textual_question_singular_hint</item>
+    </string-array>
+
+    <!-- For Question 44 -->
+    <string-array name="option_44_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_44_array">
+        <item>Ostrich</item>
+    </string-array>
+    <string-array name="hint_44_array">
+        <item>https://cloudfront.safaribookings.com/library/birding/l/Ostrich.jpg</item>
+        <item>@string/default_textual_question_singular_hint</item>
+    </string-array>
+
+    <!-- For Question 45 -->
+    <string-array name="option_45_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_45_array">
+        <item>Great Auk</item>
+    </string-array>
+    <string-array name="hint_45_array">
+        <item>http://www.telegraph.co.uk/content/dam/science/2016/08/19/great_auk-large_trans_NvBQzQNjv4Bq47yQTQtFVQSsa7Qd7Xcr07qvOVDKL8deB9MmqbBq9Cs.jpg</item>
+        <item>@string/default_textual_question_singular_hint</item>
+    </string-array>
+
+    <!-- For Question 46 -->
+    <string-array name="option_46_array">
+        <item>Ibis</item>
+        <item>Pelicans</item>
+        <item>Egrets</item>
+        <item>Starlings</item>
+    </string-array>
+    <string-array name="key_46_array">
+        <item>Ibis</item>
+        <item>Pelicans</item>
+        <item>Egrets</item>
+    </string-array>
+    <string-array name="hint_46_array">
+        <item>@drawable/question_46_collage</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 47 -->
+    <string-array name="option_47_array">
+        <item>Ostrich</item>
+        <item>Emu</item>
+        <item>Elephant Bird</item>
+        <item>Moa</item>
+    </string-array>
+    <string-array name="key_47_array">
+        <item>Elephant Bird</item>
+    </string-array>
+    <string-array name="hint_47_array">
+        <item>https://s-media-cache-ak0.pinimg.com/originals/69/cd/9a/69cd9a60b6abc7f50bdc277ed06169d5.jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 48 -->
+    <string-array name="option_48_array">
+        <item>Peregrine Falcon</item>
+        <item>Snake Eagle</item>
+        <item>Secretary Bird</item>
+        <item>Caracara</item>
+    </string-array>
+    <string-array name="key_48_array">
+        <item>Secretary Bird</item>
+    </string-array>
+    <string-array name="hint_48_array">
+        <item>http://3.bp.blogspot.com/-jtN6M9kMDaE/U8pJchIOHhI/AAAAAAAAc0s/pI5fe5-WhTs/s1600/secretary+bird+HD+Wallpapers+(1).jpg</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 49 -->
+    <string-array name="option_49_array">
+        <item>Hoopoe</item>
+        <item>Secretary Bird</item>
+        <item>Sarus Crane</item>
+        <item>Crowned Crane</item>
+    </string-array>
+    <string-array name="key_49_array">
+        <item>Hoopoe</item>
+        <item>Secretary Bird</item>
+        <item>Crowned Crane</item>
+    </string-array>
+    <string-array name="hint_49_array">
+        <item>@drawable/question_49_collage</item>
+        <item>@string/default_hint_text</item>
+    </string-array>
+
+    <!-- For Question 50 -->
+    <string-array name="option_50_array">
+        <item>@string/default_textual_question_edittext_hint</item>
+    </string-array>
+    <string-array name="key_50_array">
+        <item>Owls</item>
+    </string-array>
+    <string-array name="hint_50_array">
+        <item>http://www.blazingcariboustudios.com/wp-content/uploads/2016/10/OWLS.jpg</item>
+        <item>@string/default_textual_question_plural_hint</item>
+    </string-array>
+
+</resources>

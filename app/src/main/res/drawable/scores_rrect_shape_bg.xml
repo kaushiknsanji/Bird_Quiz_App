@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners android:radius="@dimen/header_score_corner_radius" />
+
+    <padding
+        android:bottom="@dimen/header_score_pad_bottom"
+        android:left="@dimen/header_score_pad_left"
+        android:right="@dimen/header_score_pad_right"
+        android:top="@dimen/header_score_pad_top" />
+
+    <stroke
+        android:width="@dimen/header_score_border_width"
+        android:color="@color/scoresDeepOrangeA400" />
+
+    <solid android:color="@color/scoresDeepOrangeA400" />
+
+</shape>

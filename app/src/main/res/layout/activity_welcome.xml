@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kaushiknsanji.birdquiz.WelcomeActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/aves" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/welcome_overlay_screen_bottom_margin"
+        android:layout_marginEnd="@dimen/welcome_overlay_screen_right_margin"
+        android:layout_marginLeft="@dimen/welcome_overlay_screen_left_margin"
+        android:layout_marginRight="@dimen/welcome_overlay_screen_right_margin"
+        android:layout_marginStart="@dimen/welcome_overlay_screen_left_margin"
+        android:layout_marginTop="@dimen/welcome_overlay_screen_top_margin"
+        android:background="@color/welcomeOverlayBackgroundAlphaGrey50"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_text_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/title_text_top_margin"
+            android:lineSpacingMultiplier="1.1"
+            android:textAlignment="center"
+            android:textColor="@color/titleTextRed800"
+            android:textSize="@dimen/title_text_size"
+            tools:text="@string/title_text" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/info_text_scrollview_height"
+            android:layout_marginEnd="@dimen/info_text_scrollview_right_margin"
+            android:layout_marginLeft="@dimen/info_text_scrollview_left_margin"
+            android:layout_marginRight="@dimen/info_text_scrollview_right_margin"
+            android:layout_marginStart="@dimen/info_text_scrollview_left_margin"
+            android:layout_marginTop="@dimen/info_text_scrollview_top_margin"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <TextView
+                android:id="@+id/info_text_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/info_text_padding"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/info_text_size"
+                tools:text="@string/info_text" />
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/begin_quiz_button_id"
+            style="@style/submit_hint_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/begin_quiz_button_margin"
+            android:padding="@dimen/begin_quiz_button_padding"
+            android:text="@string/begin_quiz_button_text" />
+
+    </LinearLayout>
+
+</RelativeLayout>

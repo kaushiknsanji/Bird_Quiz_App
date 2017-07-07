@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <stroke
+        android:width="@dimen/text_option_box_border_width"
+        android:color="@color/textOptionBorderLightGreen900" />
+
+    <solid android:color="@color/textOptionBackgroundLightGreen100" />
+
+    <padding
+        android:bottom="@dimen/text_option_box_pad_bottom"
+        android:left="@dimen/text_option_box_pad_left"
+        android:right="@dimen/text_option_box_pad_right"
+        android:top="@dimen/text_option_box_pad_top" />
+
+</shape>

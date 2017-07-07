@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/fslBackgroundIndigo900"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/final_score_title_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/fsl_title_text_bottom_margin"
+        android:layout_marginEnd="@dimen/fsl_title_text_right_margin"
+        android:layout_marginLeft="@dimen/fsl_title_text_left_margin"
+        android:layout_marginRight="@dimen/fsl_title_text_right_margin"
+        android:layout_marginStart="@dimen/fsl_title_text_left_margin"
+        android:layout_marginTop="@dimen/fsl_title_text_top_margin"
+        android:text="@string/final_score_title_text"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/final_score_title_text_size" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/fsl_title_divider_height"
+        android:layout_marginBottom="@dimen/fsl_title_divider_bottom_margin"
+        android:background="@color/fslTitleDividerOrange700" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fsl_score_height"
+        android:layout_marginBottom="@dimen/fsl_score_bottom_margin"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <ImageView
+            style="@style/fsl_circle_star_style"
+            android:layout_marginEnd="@dimen/fsl_circle_star_4dip_margin"
+            android:layout_marginLeft="@dimen/fsl_circle_star_24dip_margin"
+            android:layout_marginRight="@dimen/fsl_circle_star_4dip_margin"
+            android:layout_marginStart="@dimen/fsl_circle_star_24dip_margin" />
+
+        <TextView
+            android:id="@+id/final_score_text_id"
+            android:layout_width="@dimen/fsl_score_text_width"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:paddingEnd="@dimen/fsl_score_text_pad_right"
+            android:paddingLeft="@dimen/fsl_score_text_pad_left"
+            android:paddingRight="@dimen/fsl_score_text_pad_right"
+            android:paddingStart="@dimen/fsl_score_text_pad_left"
+            android:textColor="@color/fslScoreTextAmber500"
+            android:textSize="@dimen/fsl_score_text_size"
+            tools:text="100 of 10" />
+
+        <ImageView
+            style="@style/fsl_circle_star_style"
+            android:layout_marginEnd="@dimen/fsl_circle_star_24dip_margin"
+            android:layout_marginLeft="@dimen/fsl_circle_star_4dip_margin"
+            android:layout_marginRight="@dimen/fsl_circle_star_24dip_margin"
+            android:layout_marginStart="@dimen/fsl_circle_star_4dip_margin" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/grade_summary_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/fsl_grade_summary_height"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/fsl_grade_summary_bottom_margin"
+        android:layout_marginEnd="@dimen/fsl_grade_summary_right_margin"
+        android:layout_marginLeft="@dimen/fsl_grade_summary_left_margin"
+        android:layout_marginRight="@dimen/fsl_grade_summary_right_margin"
+        android:layout_marginStart="@dimen/fsl_grade_summary_left_margin"
+        android:layout_weight="1"
+        android:textColor="@color/fslGradeSummaryCyan100"
+        android:textSize="@dimen/fsl_grade_summary_text_size"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus faucibus est maximus velit rhoncus dictum. Quisque sit amet malesuada sem. Curabitur a condimentum leo. " />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fsl_button_layout_margin"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/quit_button_id"
+            style="@style/fsl_button_style"
+            android:layout_marginEnd="@dimen/fsl_quit_button_left_margin"
+            android:layout_marginRight="@dimen/fsl_quit_button_left_margin"
+            android:gravity="end|center"
+            android:paddingEnd="@dimen/fsl_quit_button_pad_right"
+            android:paddingLeft="@dimen/fsl_quit_button_pad_left"
+            android:paddingRight="@dimen/fsl_quit_button_pad_right"
+            android:paddingStart="@dimen/fsl_quit_button_pad_left"
+            android:text="@string/quit_button_text" />
+
+        <Button
+            android:id="@+id/retake_button_id"
+            style="@style/fsl_button_style"
+            android:layout_marginLeft="@dimen/fsl_retake_button_left_margin"
+            android:layout_marginStart="@dimen/fsl_retake_button_left_margin"
+            android:paddingEnd="@dimen/fsl_retake_button_pad_right"
+            android:paddingLeft="@dimen/fsl_retake_button_pad_left"
+            android:paddingRight="@dimen/fsl_retake_button_pad_right"
+            android:paddingStart="@dimen/fsl_retake_button_pad_left"
+            android:text="@string/retake_quiz_button_text" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<resources>
+    <!-- WelcomeActivity Strings -->
+    <string name="title_text">Quiz of%sAves</string>
+    <string name="info_text">This is a Quiz on Birds. A total of &lt;b&gt;%d&lt;/b&gt; questions
+        are in this quiz. The questions can be choice based questions &lt;b&gt;(single/multi select option)&lt;/b&gt;
+        and also &lt;b&gt;textual questions&lt;/b&gt;. When the question is choice based, it can have a max of &lt;b&gt;4&lt;/b&gt;
+        selectable options. For each question, user will be given the option to reattempt with
+        the help of a hint that gets activated after the first incorrect attempt. Hint will be a
+        picture of the bird shown to the user as a clue to the question. Hence, &lt;b&gt;make sure that
+        the internet connection is fine and avoid using on metered connections&lt;/b&gt;. Whether the user wishes
+        to use the hint or not, for each question, two attempts can be made. &lt;b&gt;Please select the
+        number of questions you wish to take (Quiz will have a timer set accordingly)&lt;/b&gt;</string>
+    <string name="begin_quiz_button_text">Begin Quiz</string>
+    <string name="total_question_opt_value">EXTRA_TOTAL_QUESTION_OPT_VAL</string>
+    <string name="number_picker_cancel_toast_text">Value needs to be selected to start the quiz</string>
+
+    <!-- Question Number Picker Dialog Strings -->
+    <string name="positive_set_button_text">Set</string>
+    <string name="negative_cancel_button_text">Cancel</string>
+
+    <!-- QuizActivity Strings -->
+    <string name="app_name">Quiz of Aves</string>
+    <string name="header_text_question">Question</string>
+    <string name="header_text_score">Score</string>
+    <string name="submit_button_text">Submit</string>
+    <string name="next_button_text">Next</string>
+    <string name="finish_button_text">Finish</string>
+    <string name="show_hint_button_text">Show Hint</string>
+    <string name="hint_button_toast_text">Check the hint below…</string>
+    <string name="progress_dialog_initial_loading_text">Please wait while loading…</string>
+    <string name="progress_dialog_downloading_text">Please wait while downloading image…</string>
+    <string name="default_textual_question_answer_text">Correct answer is &lt;b&gt;%s&lt;/b&gt;.
+        Press the flag button to scroll over to the image</string>
+    <string name="default_textual_question_edittext_hint">Input your answer</string>
+    <string name="default_textual_question_singular_hint">Identify the bird shown in the image above.
+        Press the flag button to scroll over to the image. &lt;b&gt;Answer needs to be in Singular form&lt;/b&gt;</string>
+    <string name="default_textual_question_plural_hint">Identify the bird shown in the image above.
+        Press the flag button to scroll over to the image. &lt;b&gt;Answer needs to be in Plural form&lt;/b&gt;</string>
+    <string name="default_hint_text">Identify the bird shown in the image above.
+        Press the flag button to scroll over to the image</string>
+    <string name="no_option_selected">Please select any option before submitting</string>
+    <string name="correct_answer">That\'s absolutely Perfect!!!</string>
+    <string name="partially_correct_answer_hint">Nice try, that\'s partially correct!!
+        You may try the Hint now</string>
+    <string name="partially_correct_answer_again">That\'s partially correct again!!</string>
+    <string name="wrong_answer_hint">Wrong answer!! You may try the Hint now</string>
+    <string name="wrong_answer_again">Oops! Wrong answer again!!</string>
+    <string name="timer_text">%1$02d:%2$02d</string>
+    <string name="bad_network_toast_text">BAD NETWORK STATE! PLEASE CHECK CONNECTION</string>
+    <string name="on_demand_download_fail_toast_text">Image download could not complete</string>
+    <string name="app_resumed_toast_text">Welcome back! Found the Answer?</string>
+
+    <!-- Final Score Dialog Strings -->
+    <string name="final_score_text">%1$d of %2$d</string>
+    <string name="perfect_score_summary_text">Splendid! Simply Genius!!!</string>
+    <string name="avg_score_summary_text">Good going! That\'s an average score. Keep it up.</string>
+    <string name="above_avg_score_summary_text">Wow! That\'s an above average score. Keep it up.</string>
+    <string name="below_avg_score_summary_text">Hmm, that\'s a below average score. There\'s a lot to improve.</string>
+    <string name="zero_score_summary_text">Oops! that\'s a bagel! This time a Zero, next time you\'ll be a Hero. Don\'t give up.</string>
+    <string name="elapsed_time_summary_text">Oh Dear! Seems like you lost time. Better luck next time!!</string>
+    <string name="quit_button_text">Quit</string>
+    <string name="retake_quiz_button_text">Retake Quiz</string>
+    <string name="final_score_title_text">Final Score</string>
+    <string name="qnpl_number_picker_text">Attempting how many Questions?</string>
+
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true" android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="3dp" />
+            <stroke android:width="@dimen/submit_button_border_width" android:color="@color/submitButtonShadeA700" />
+            <solid android:color="@color/submitButtonShadeA200" />
+        </shape>
+    </item>
+    <item android:state_enabled="true" android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="4dp" />
+            <stroke android:width="@dimen/submit_button_border_width" android:color="@color/submitButtonShadeA200" />
+            <gradient android:angle="90" android:endColor="@color/submitButtonShadeA200" android:startColor="@color/submitButtonShadeA700" android:type="linear" />
+        </shape>
+    </item>
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="4dp" />
+            <stroke android:width="@dimen/submit_button_border_width" android:color="@color/submitButtonShadeA100" />
+            <solid android:color="#ffd180" />
+        </shape>
+    </item>
+</selector>

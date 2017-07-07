@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- List of Resource IDs for the question options/components generated programmatically -->
+    <item name="first_option" type="id" />
+    <item name="second_option" type="id" />
+    <item name="third_option" type="id" />
+    <item name="fourth_option" type="id" />
+    <item name="rad_group_option" type="id" />
+    <item name="text_option" type="id" />
+    <item name="option_table_layout" type="id" />
+</resources>

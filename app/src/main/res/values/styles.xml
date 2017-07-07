@@ -1,0 +1,88 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="NoActionBar" parent="Theme.AppCompat.NoActionBar">
+        <!-- No Action Bar theme for Welcome screen -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+
+    <style name="QuizActivityTheme" parent="Theme.AppCompat">
+        <!-- Quiz activity theme. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="header_text_style">
+        <!-- Style for Header Text -->
+        <item name="android:padding">@dimen/quiz_header_text_padding</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">@color/quizHeaderTextBlueGrey50</item>
+    </style>
+
+    <style name="header_score_style">
+        <!-- Style for Header Scores -->
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:background">@drawable/scores_rrect_shape_bg</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/quizScoresTextColor</item>
+    </style>
+
+    <style name="option_dialog_style">
+        <!-- Style for Answer keys/options -->
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/background_dark</item>
+        <item name="android:background">@drawable/option_level_list</item>
+    </style>
+
+    <style name="option_dialog_style.question">
+        <!-- Style for Question Text that displays the question -->
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+        <item name="android:background">@drawable/question_dialog</item>
+    </style>
+
+    <style name="submit_hint_button_style">
+        <!-- Style for Submit button and Hint button -->
+        <item name="android:textSize">@dimen/submit_hint_button_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:background">@drawable/button_state_selector</item>
+    </style>
+
+    <style name="fsl_button_style">
+        <!--Style for Quit button and Retake Quiz button in the Final Score Dialog-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/fslButtonTextTealA200</item>
+        <item name="android:textSize">@dimen/fsl_button_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="fsl_circle_star_style">
+        <!--Style for the Circle-Star Image shown in the Final Score Dialog-->
+        <item name="android:layout_width">@dimen/fsl_circle_star_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:src">@drawable/ic_circle_star</item>
+    </style>
+
+    <style name="qnpl_button_style">
+        <!--Style for Cancel and Set buttons in the Question Number Picker Dialog-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/holo_blue_bright</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/qnpl_button_text_size</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+</resources>
