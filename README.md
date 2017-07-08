@@ -43,7 +43,7 @@ This App has been developed as part of the **Udacity Android Basics Nanodegree C
 
 The first screen displayed when the app is launched, is the welcome screen as shown below. This displays the important information regarding the quiz.
 
-![welcome_screen](https://user-images.githubusercontent.com/26028981/27983052-4a1ff1fe-63d1-11e7-913b-d06c095d5001.png "Welcome Screen")
+<img src="https://user-images.githubusercontent.com/26028981/27983052-4a1ff1fe-63d1-11e7-913b-d06c095d5001.png" width="40%" />
 
 The questions can be choice based questions *(single/multi select option)* and also *textual questions*. When the question is choice based, it can have a max of *4* selectable options. 
 
