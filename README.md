@@ -21,27 +21,29 @@ This App has been developed as part of the **Udacity Android Basics Nanodegree C
 
 ### Things explored/developed in addition to the above defined Rubric
 
-* `android.os.AsyncTask` for downloading the images for each of the questions. `Fragment` has been used for managing this Custom `AsyncTask`.
-* `android.util.LruCache` for caching the Bitmaps downloaded.
-* `android.os.CountDownTimer` for the Quiz Timer. `Fragment` has been used for managing the `CountDownTimer`, designed as a latch that adds functionality such as _Pause_ and _Resume_.
-* `DialogFragment` to display the Number Picker Dialog for the user to select/enter the number of questions to attempt.
-* `DialogFragment` for displaying the Progress of Image Download, with a custom progress bar layout.
-* `DialogFragment` for displaying the Final score at the end of the quiz or when the quiz timer elapses.
+* `android.os.AsyncTask` for downloading the images for each of the questions. [`Fragment`](/app/src/main/java/com/example/kaushiknsanji/birdquiz/ImageDownloaderTaskFragment.java) has been used for managing this Custom `AsyncTask`.
+* [`android.util.LruCache`](/app/src/main/java/com/example/kaushiknsanji/birdquiz/BitmapImageCache.java) for caching the Bitmaps downloaded.
+* `android.os.CountDownTimer` for the Quiz Timer. [`Fragment`](/app/src/main/java/com/example/kaushiknsanji/birdquiz/CountDownLatchFragment.java) has been used for managing the `CountDownTimer`, designed as a latch that adds functionality such as _Pause_ and _Resume_.
+* [`DialogFragment`](/app/src/main/java/com/example/kaushiknsanji/birdquiz/QuestionNumberPickerDialogFragment.java) to display the Number Picker Dialog for the user to select/enter the number of questions to attempt.
+* [`DialogFragment`](/app/src/main/java/com/example/kaushiknsanji/birdquiz/ProgressDialogFragment.java) for displaying the Progress of Image Download, with a custom progress bar layout.
+* [`DialogFragment`](/app/src/main/java/com/example/kaushiknsanji/birdquiz/FinalScoreDialogFragment.java) for displaying the Final score at the end of the quiz or when the quiz timer elapses.
 * Custom Fonts/Typefaces have been used in Dialogs.
 * Vector images have been used in certain places.
 * Mipmap images for the App icons.
 * Intents for moving from one activity to the other.
-* Id resource for the components generated programmatically.
+* [Id resource](/app/src/main/res/values/ids.xml) for the components generated programmatically.
 * Nine patch images used as a background image for the question and option fields.
-* Level List Drawable for decorating the options.
-* State list drawable of shape drawables with gradient for the Submit/Hint buttons.
-* String array resources for storing the questions, their options and keys.
+* [Level List Drawable](/app/src/main/res/drawable/option_level_list.xml) for decorating the options.
+* [State list drawable](/app/src/main/res/drawable/button_state_selector.xml) of shape drawables with gradient for the Submit/Hint buttons.
+* [String array](/app/src/main/res/values/quiz_strings.xml) resources for storing the questions, their options and keys.
 
 ---
 
 ## Design and working of the App
 
-The first screen displayed when the app is launched, is the welcome screen as shown below. This displays the important information regarding the quiz. 
+The first screen displayed when the app is launched, is the welcome screen as shown below. This displays the important information regarding the quiz.
+
+![welcome_screen](https://user-images.githubusercontent.com/26028981/27983052-4a1ff1fe-63d1-11e7-913b-d06c095d5001.png "Welcome Screen")
 
 The questions can be choice based questions *(single/multi select option)* and also *textual questions*. When the question is choice based, it can have a max of *4* selectable options. 
 
