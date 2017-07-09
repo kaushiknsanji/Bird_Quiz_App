@@ -2,6 +2,8 @@
 
 This App has been developed as part of the **Udacity Android Basics Nanodegree Course** for the Exercise Project **"Quiz App"**. **Quiz of Aves** is a _Quiz on Birds_. 
 
+_Checkout the Latest Release [here](/outputs/quiz_of_aves_2017-07-09.apk)_
+
 ---
 
 ## Rubric followed for the Project
