@@ -59,7 +59,7 @@ On Click of `Set` button, the user is taken to the quiz [layout](/app/src/main/r
 
 <img src="https://user-images.githubusercontent.com/26028981/27983098-5776c2c8-63d2-11e7-93c0-94ec3127a312.png" width="40%" />     <img src="https://user-images.githubusercontent.com/26028981/27983093-31a29e6e-63d2-11e7-8950-278cfcc91cc4.png" width="40%" />
 
-The Current Question Number is shown in the top left corner, with the current score in the top right corner. In the Footer section we have the Quiz timer implemented using the `android.os.CountDownTimer` managed by the Fragment [CountDownLatchFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/CountDownLatchFragment.java) to enable additional functionality such as _Pause_ and _Resume_.
+The Current Question Number is shown in the top left corner, with the current score in the top right corner. In the Footer section we have the Quiz timer implemented using the `android.os.CountDownTimer` managed by the Fragment [CountDownLatchFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/CountDownLatchFragment.java) to enable additional functionality such as _Pause_ and _Resume_. The timer value is set accordingly to the number of questions selected by the user, by allocating 45 seconds for each question, that is, `timer value = No. Of Questions * 45`.
 
 Below the Question component, are the MCQ options/textual `EditText` option that appear based on the question. Below this, are the buttons **SUBMIT** and **SHOW HINT**. The **SHOW HINT** button always appears disabled for every question, as for every question user has two chances to get the right answer. On the first incorrect attempt, **SHOW HINT** button and its related components are enabled.
 
@@ -68,6 +68,8 @@ Above the Question component is the Hidden Image that displays the Hint Image fo
 When the Hint Image is not yet downloaded, or during the initial launch when the images are being downloaded and cached, the above progress bar dialog will be shown. _The timer will be paused(internally canceled) in such cases and will be resumed once done_. The Progress dialog shown is as per the layout designed [here](/app/src/main/res/layout/progress_bar_layout.xml) managed by the DialogFragment [ProgressDialogFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/ProgressDialogFragment.java). The images are downloaded for the current and its following question using the `android.os.AsyncTask` managed by the Fragment [ImageDownloaderTaskFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/ImageDownloaderTaskFragment.java). At every question, the current image and the next image are kept in `android.util.LruCache` [BitmapImageCache](/app/src/main/java/com/example/kaushiknsanji/birdquiz/BitmapImageCache.java) which is used to restore the images during configuration changes.
 
 _All the questions, options and keys are loaded from the [String array](/app/src/main/res/values/quiz_strings.xml) resources. The images for the MCQ-Checkbox based questions are loaded from the `/app/src/main/res/drawable` resource._
+
+_As images are downloaded for each of the questions, it is recommended to use the app in a non-metered connection with good connectivity. If the connectivity is bad, it will notify the user in a toast message, and in such cases for every question user will notice that the app is **freezing** leading to possible ANRs. This will happen since the ping test is done in the UI Thread, OOPS!!_
 
 #### Textual Based Questions
 For Textual based questions, the textual response is acquired using the `EditText` component as shown below. 
@@ -81,6 +83,12 @@ When the question is answered correctly, a toast will be shown saying it is corr
 _In case the user was pretty fast in answering the question and the image was not yet downloaded, the image will not be shown and the pending download will be cancelled with a toast message saying it could not complete. This is applicable for any kind of question._
 
 #### MCQ-RadioButton Based Questions
+
+<img src="https://user-images.githubusercontent.com/26028981/27983113-aa24d442-63d2-11e7-8494-2e6f48612f0b.png" width="40%" />   <img src="https://user-images.githubusercontent.com/26028981/27983123-c660b5ea-63d2-11e7-8759-42b1473cc03c.png" height="40%" width="70%"/>
+
+The RadioButton Options appear one below the other in a portrait layout while in the landscape layout, it appears as a table of RadioButtons. _There will be a maximum of 4 options in MCQ based questions applicable for both RadioButton and Checkbox based questions. The layouts for CheckBox is designed in the same lines as that of RadioButton._
+
+<img src="https://user-images.githubusercontent.com/26028981/27983127-dfeea940-63d2-11e7-93d3-478374710a25.png" width="40%" />    <img src="https://user-images.githubusercontent.com/26028981/27983145-fddb99d6-63d2-11e7-9c17-322105649d46.png" width="40%" />
 
 ---
 
