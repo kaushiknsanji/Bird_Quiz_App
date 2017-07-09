@@ -74,6 +74,14 @@ For Textual based questions, the textual response is acquired using the `EditTex
 
 <img src="https://user-images.githubusercontent.com/26028981/27983103-691345a6-63d2-11e7-9ff6-0895d233b813.png" width="40%" />
 
+When the question is answered correctly, a toast will be shown saying it is correct and the **SUBMIT** button changes to **NEXT**. Image is also revealed in this case for the user to enjoy ogling at the bird's beauty :stuck_out_tongue_winking_eye:
+
+<img src="https://user-images.githubusercontent.com/26028981/27983108-8845a3c4-63d2-11e7-882f-89d480178cbc.png" width="40%" />   <img src="https://user-images.githubusercontent.com/26028981/27983110-8d73dafa-63d2-11e7-8918-869415f5dd2f.png" width="40%" />
+
+_In case the user was pretty fast in answering the question and the image was not yet downloaded, the image will not be shown and the pending download will be cancelled with a toast message saying it could not complete. This is applicable for any kind of question._
+
+#### MCQ-RadioButton Based Questions
+
 ---
 
 ### Changes done post submission
