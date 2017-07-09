@@ -115,14 +115,23 @@ Once the last question is answered, the **SUBMIT** button changes to **FINISH**.
 
 <img src="https://user-images.githubusercontent.com/26028981/27983169-a14aace2-63d3-11e7-9539-6c179ccccb3f.png" width="40%" />
 
-The [layout](/app/src/main/res/layout/final_score_layout.xml) of the score dialog is managed by the DialogFragment [FinalScoreDialogFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/FinalScoreDialogFragment.java)
+The [layout](/app/src/main/res/layout/final_score_layout.xml) of the score dialog is managed by the DialogFragment [FinalScoreDialogFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/FinalScoreDialogFragment.java). The Dialog displays the final score with a brief message. This message changes with the percentage range of the score. The Dialog has two buttons -
+- **QUIT** button will quit from the application by invoking finish on the `QuizActivity`.
+- **RETAKE QUIZ** button will restart the app by launching the `WelcomeActivity`.
 
----
+#### When the Quiz Timer times out
 
-### Changes done post submission
+<img src="https://user-images.githubusercontent.com/26028981/27983170-b322ee98-63d3-11e7-9ced-72a5f9e801f4.png" width="40%" />
+
+If the Quiz timer elapsed before the completion of the quiz, the final score will be displayed with the message as shown above.
 
 ---
 
 ### Changes planned post submission
 
-* Need to move the `` contents to Database and fetch the content from database.
+* Need to move the [questions](/app/src/main/res/values/quiz_strings.xml) and its related stuff to Database and fetch the content from database.
+* Need to move the ping test to a thread other than the UI Thread.
+
+---
+
+### Changes done post submission
