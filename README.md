@@ -57,8 +57,11 @@ On Click of `Set` button, the user is taken to the quiz [layout](/app/src/main/r
 
 The Current Question is shown in the top left corner, with the current score in the top right corner. In the Footer section we have the Quiz timer implemented using the `android.os.CountDownTimer` managed by the Fragment [CountDownLatchFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/CountDownLatchFragment.java) to enable additional functionality such as _Pause_ and _Resume_.
 
-Below the Question component, are the MCQ options/textual `EditText` option that appear based on the question. Below this, are the buttons **SUBMIT** and **SHOW HINT** button. The **SHOW HINT** button always appears disabled for every questions, as for every question user has two chances to get the right answer. On the first incorrect attempt, **SHOW HINT** button and its related components are enabled
-Above the Question component is the Hidden Image that displays the Hint Image
+Below the Question component, are the MCQ options/textual `EditText` option that appear based on the question. Below this, are the buttons **SUBMIT** and **SHOW HINT**. The **SHOW HINT** button always appears disabled for every question, as for every question user has two chances to get the right answer. On the first incorrect attempt, **SHOW HINT** button and its related components are enabled.
+
+Above the Question component is the Hidden Image that displays the Hint Image for the question. This will be the picture of the Bird, that the user needs to identify and answer accordingly. The Hint Image is shown when the **SHOW HINT** button is clicked.
+
+When the Hint Image is not yet downloaded, or during the initial launch when the images are being downloaded and cached, the above progress bar dialog will be shown. The Progress dialog shown is as per the layout designed [here](/app/src/main/res/layout/progress_bar_layout.xml) managed by the DialogFragment [ProgressDialogFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/ProgressDialogFragment.java). The images are downloaded for the current and its following question using the `android.os.AsyncTask` managed by the Fragment [ImageDownloaderTaskFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/ImageDownloaderTaskFragment.java). At every question, the current image and the next image are kept in `android.util.LruCache` [BitmapImageCache](/app/src/main/java/com/example/kaushiknsanji/birdquiz/BitmapImageCache.java) which is used to restore the images during configuration changes.
 
 ---
 
