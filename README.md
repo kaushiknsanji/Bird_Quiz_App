@@ -34,7 +34,7 @@ This App has been developed as part of the **Udacity Android Basics Nanodegree C
 * [Id resource](/app/src/main/res/values/ids.xml) for the components generated programmatically.
 * Nine patch images used as a background image for the question and option fields.
 * [Level List Drawable](/app/src/main/res/drawable/option_level_list.xml) for decorating the options.
-* [State list drawable](/app/src/main/res/drawable/button_state_selector.xml) of shape drawables with gradient for the Submit/Hint buttons.
+* [State List Drawable](/app/src/main/res/drawable/button_state_selector.xml) of shape drawables with gradient for the Submit/Hint buttons.
 * [String array](/app/src/main/res/values/quiz_strings.xml) resources for storing the questions, their options and keys.
 
 ---
