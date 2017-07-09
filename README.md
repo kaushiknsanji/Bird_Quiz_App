@@ -69,7 +69,7 @@ When the Hint Image is not yet downloaded, or during the initial launch when the
 
 _All the questions, options and keys are loaded from the [String array](/app/src/main/res/values/quiz_strings.xml) resources. The images for the MCQ-Checkbox based questions are loaded from the `/app/src/main/res/drawable` resource._
 
-_As images are downloaded for each of the questions, it is recommended to use the app in a non-metered connection with good connectivity. If the connectivity is bad, it will notify the user in a toast message, and in such cases for every question user will notice that the app is **freezing** leading to possible ANRs. This will happen since the ping test is done in the UI Thread, OOPS!!_
+_As images are downloaded for each question, it is recommended to use the app in a non-metered connection with good connectivity. If the connectivity is bad, it will notify the user in a toast message, and in such cases for every question user will notice that the app is **freezing** leading to possible ANRs. This will happen since the ping test is done in the UI Thread, OOPS!!_
 
 #### Textual Based Questions
 For Textual based questions, the textual response is acquired using the `EditText` component as shown below. 
