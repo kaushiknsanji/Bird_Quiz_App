@@ -90,11 +90,17 @@ The RadioButton Options appear one below the other in a portrait layout while in
 
 <img src="https://user-images.githubusercontent.com/26028981/27983127-dfeea940-63d2-11e7-93d3-478374710a25.png" width="40%" />    <img src="https://user-images.githubusercontent.com/26028981/27983145-fddb99d6-63d2-11e7-9c17-322105649d46.png" width="40%" />
 
-[Level List Drawables](/app/src/main/res/drawable/option_level_list.xml) of Nine patch images are used as a background for the options of MCQ based questions. When selected, the color of the option turns orange indicating it is the user selected answer, and if the answer turns out to be correct, the color of the options turns green. This is accomplised manually by setting the level of the drawable accordingly through the `CompoundButton.OnCheckedChangeListener` attached to the options _(applicable for CheckBox as well)_.
+[Level List Drawables](/app/src/main/res/drawable/option_level_list.xml) of Nine patch images are used as a background for the options of MCQ based questions. When selected, the color of the option turns orange indicating it is the user selected answer, and if the answer turns out to be correct, the color of the options turns green. This is accomplised manually by setting the level of the drawable accordingly through the `CompoundButton.OnCheckedChangeListener` attached to the options.
 
 <img src="https://user-images.githubusercontent.com/26028981/27983154-5b8f71ba-63d3-11e7-8249-87f2c5d2651a.png" width="40%" />    <img src="https://user-images.githubusercontent.com/26028981/27983158-6e38f732-63d3-11e7-9ee8-ffc6f55cb97a.png" width="40%" />
 
 On the first incorrect attempt, user will be able use the **SHOW HINT** button that gets enabled. On click of this, a textbox with a hint message and a button adjacent to it will be shown. The button here which is the `assistant` button (or the flag button), will scroll up to the hint image when clicked. On the second incorrect attempt, actual answer will be revealed in green along side the user selected answer shown in orange.
+
+#### MCQ-CheckBox Based Questions
+
+<img src="https://user-images.githubusercontent.com/26028981/27983163-82ae1b0c-63d3-11e7-9b3e-040d99f3b65d.png" width="40%" />    <img src="https://user-images.githubusercontent.com/26028981/27983165-92307bba-63d3-11e7-8bda-3cfc2e8cd0f2.png" width="40%" />
+
+For CheckBox Based Questions, users can select mutiple options based on which the selected answers are evaluated. The design is similar to RadioButtons as discussed above and also has the `CompoundButton.OnCheckedChangeListener` attached to the options for changing the level of the drawable.
 
 ---
 
