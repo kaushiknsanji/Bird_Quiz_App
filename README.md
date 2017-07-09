@@ -102,6 +102,21 @@ On the first incorrect attempt, user will be able use the **SHOW HINT** button t
 
 For CheckBox Based Questions, users can select mutiple options based on which the selected answers are evaluated. The design is similar to RadioButtons as discussed above and also has the `CompoundButton.OnCheckedChangeListener` attached to the options for changing the level of the drawable.
 
+#### Information in general for all types of questions
+* Whether it is a textual based question or an MCQ of the type RadioButton or CheckBox, once the answer is submitted and the **SUBMIT** button changes to **NEXT**, the options/components are disabled to prevent any further changes especially cosmetic changes.
+* For MCQ based questions, there can be a maximum of 4 options with a minimum of 2 options per question.
+* The EditText field for the textual based questions, the RadioButtons and CheckBoxes for MCQs are programmatically generated components. The Ids for such fields are generated and used by employing the [Id resource](/app/src/main/res/values/ids.xml).
+* If the following question happens to be a RadioButton based and the current question was also RadiButton based, then when the next question appears, these RadioButtons will be reused with the text values changed. Same is applicable for CheckBox based question. If the following question has less number of options, extra option components will be deleted accordingly.
+* If the following question happens to be a question with textual response and the current question was also a question with textual response, then the EditText field will be reused post the text content being reset.
+
+#### When the Quiz Completes
+
+Once the last question is answered, the **SUBMIT** button changes to **FINISH**. On click of **FINISH**, the following score dialog will be shown and the timer will be _Paused_(internally cancelled).
+
+<img src="https://user-images.githubusercontent.com/26028981/27983169-a14aace2-63d3-11e7-9539-6c179ccccb3f.png" width="40%" />
+
+The [layout](/app/src/main/res/layout/final_score_layout.xml) of the score dialog is managed by the DialogFragment [FinalScoreDialogFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/FinalScoreDialogFragment.java)
+
 ---
 
 ### Changes done post submission
