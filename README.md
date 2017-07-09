@@ -39,13 +39,26 @@ This App has been developed as part of the **Udacity Android Basics Nanodegree C
 
 ---
 
-## Design and working of the App
+## Design and Implementation of the App
 
 The first screen displayed when the app is launched, is the welcome screen as shown below. This displays the important information regarding the quiz.
 
 <img src="https://user-images.githubusercontent.com/26028981/27983052-4a1ff1fe-63d1-11e7-913b-d06c095d5001.png" width="40%" />
 
-The questions can be choice based questions *(single/multi select option)* and also *textual questions*. When the question is choice based, it can have a max of *4* selectable options. 
+The [layout](/app/src/main/res/layout/activity_welcome.xml) behaviour is controlled by the [WelcomeActivity](/app/src/main/java/com/example/kaushiknsanji/birdquiz/WelcomeActivity.java). When the **"BEGIN QUIZ"** button is clicked, the question number picker dialog is launched where the user selects the number of questions to be attempted. The number of questions can also be manually entered. If the entered value is out-of-range, it simply ignores the value and stays at the selected value.
+
+<img src="https://user-images.githubusercontent.com/26028981/27983062-83839f18-63d1-11e7-8a93-4dca3efcc554.png" width="40%" />
+
+On Click of `Cancel` button, a toast message is shown prompting the user to select the number of questions to attempt. This will not dismiss the dialog and has been done _intentionally_ so that the user attempts some number of questions before quiting :stuck_out_tongue_winking_eye:
+
+On Click of `Set` button, the user is taken to the quiz [layout](/app/src/main/res/layout/activity_quiz.xml) controlled by the [QuizActivity](/app/src/main/java/com/example/kaushiknsanji/birdquiz/QuizActivity.java).
+
+<img src="https://user-images.githubusercontent.com/26028981/27983098-5776c2c8-63d2-11e7-93c0-94ec3127a312.png" width="40%" />     <img src="https://user-images.githubusercontent.com/26028981/27983093-31a29e6e-63d2-11e7-8950-278cfcc91cc4.png" width="40%" />
+
+The Current Question is shown in the top left corner, with the current score in the top right corner. In the Footer section we have the Quiz timer implemented using the `android.os.CountDownTimer` managed by the Fragment [CountDownLatchFragment](/app/src/main/java/com/example/kaushiknsanji/birdquiz/CountDownLatchFragment.java) to enable additional functionality such as _Pause_ and _Resume_.
+
+Below the Question component, are the MCQ options/textual `EditText` option that appear based on the question. Below this, are the buttons **SUBMIT** and **SHOW HINT** button. The **SHOW HINT** button always appears disabled for every questions, as for every question user has two chances to get the right answer. On the first incorrect attempt, **SHOW HINT** button and its related components are enabled
+Above the Question component is the Hidden Image that displays the Hint Image
 
 ---
 
