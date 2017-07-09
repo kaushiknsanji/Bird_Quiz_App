@@ -106,7 +106,7 @@ For CheckBox Based Questions, users can select mutiple options based on which th
 * Whether it is a textual based question or an MCQ of the type RadioButton or CheckBox, once the answer is submitted and the **SUBMIT** button changes to **NEXT**, the options/components are disabled to prevent any further changes especially cosmetic changes.
 * For MCQ based questions, there can be a maximum of 4 options with a minimum of 2 options per question.
 * The EditText field for the textual based questions, the RadioButtons and CheckBoxes for MCQs are programmatically generated components. The Ids for such fields are generated and used by employing the [Id resource](/app/src/main/res/values/ids.xml).
-* If the following question happens to be a RadioButton based and the current question was also RadiButton based, then when the next question appears, these RadioButtons will be reused with the text values changed. Same is applicable for CheckBox based question. If the following question has less number of options, extra option components will be deleted accordingly.
+* If the following question happens to be a RadioButton based and the current question was also RadiButton based, then when the next question appears, these RadioButtons will be reused with the text values changed. Same is applicable for CheckBox based question. If the following question has less number of options, extra option components will be deleted accordingly (vice-versa, the components will be added).
 * If the following question happens to be a question with textual response and the current question was also a question with textual response, then the EditText field will be reused post the text content being reset.
 
 #### When the Quiz Completes
@@ -124,6 +124,11 @@ The [layout](/app/src/main/res/layout/final_score_layout.xml) of the score dialo
 <img src="https://user-images.githubusercontent.com/26028981/27983170-b322ee98-63d3-11e7-9ced-72a5f9e801f4.png" width="40%" />
 
 If the Quiz timer elapsed before the completion of the quiz, the final score will be displayed with the message as shown above.
+
+#### Information in general, on the entire app
+* Back is disabled _intentionally_ for all the dialogs. Dismiss on touch is also disabled.
+* Back on activity will destroy/finish the activity/app.
+* If home button is pressed, then the app will continue to run in the background. _**The Quiz timer will not be paused in this case which is done intentionally. It will continue to run until the user quits the application using back button.**_
 
 ---
 
