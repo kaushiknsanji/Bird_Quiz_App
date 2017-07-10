@@ -131,6 +131,7 @@ If the Quiz timer elapsed before the completion of the quiz, the final score wil
 * Back is disabled _intentionally_ for all the dialogs. Dismiss on touch is also disabled.
 * Back on activity will destroy/finish the activity/app.
 * If home button is pressed, then the app will continue to run in the background. _**The Quiz timer will not be paused in this case which is done intentionally. It will continue to run until the user quits the application using back button.**_
+* The quiz questions and its options are randomized.
 
 ---
 
