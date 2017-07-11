@@ -6,6 +6,11 @@ _Checkout the Latest Release [here](/outputs/quiz_of_aves_2017-07-09.apk)_
 
 ---
 
+## App Compatibity / Prerequisite
+Android device running with Android OS 4.1 (API Level 16) or above.
+
+---
+
 ## Rubric followed for the Project
 
 * Questions should be in a variety of formats such as free text response, checkboxes, and radio buttons.
