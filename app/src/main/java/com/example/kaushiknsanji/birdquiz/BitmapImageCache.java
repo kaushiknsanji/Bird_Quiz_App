@@ -6,7 +6,7 @@ import android.util.LruCache;
 /**
  * Application level class that stores the Bitmaps downloaded in a cache memory
  *
- * @author <a href="mailto:kaushiknsanji@gmail.com">Kaushik N Sanji</a>
+ * @author Kaushik N Sanji
  */
 public class BitmapImageCache {
 

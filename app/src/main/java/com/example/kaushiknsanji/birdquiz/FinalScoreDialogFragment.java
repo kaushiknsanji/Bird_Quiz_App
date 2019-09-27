@@ -16,7 +16,7 @@ import android.widget.TextView;
  * DialogFragment class for displaying the Final score at the end of the quiz
  * or when the quiz timer elapses
  *
- * @author <a href="mailto:kaushiknsanji@gmail.com">Kaushik N Sanji</a>
+ * @author Kaushik N Sanji
  */
 public class FinalScoreDialogFragment extends DialogFragment {
 
@@ -52,7 +52,6 @@ public class FinalScoreDialogFragment extends DialogFragment {
     }
 
     //Attaching the Activity to the fragment
-    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -81,25 +80,25 @@ public class FinalScoreDialogFragment extends DialogFragment {
         boolean timeElapsed = args.getBoolean(TIME_ELAPSED_BOOL_KEY);
 
         //Retrieving the Title View and setting the Typeface: START
-        TextView titleTextView = (TextView) finalScoreLayoutView.findViewById(R.id.final_score_title_text_id);
+        TextView titleTextView = finalScoreLayoutView.findViewById(R.id.final_score_title_text_id);
         Typeface titleTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/coprgtb.ttf");
         titleTextView.setTypeface(titleTypeface);
         //Retrieving the Title View and setting the Typeface: END
 
         //Retrieving the Final Score Text View to set the Text and Typeface: START
-        TextView finalScoreTextView = (TextView) finalScoreLayoutView.findViewById(R.id.final_score_text_id);
+        TextView finalScoreTextView = finalScoreLayoutView.findViewById(R.id.final_score_text_id);
         finalScoreTextView.setText(getString(R.string.final_score_text, totalScore, noOfQuestions));
         Typeface finalScoreTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/rothenbg.ttf");
         finalScoreTextView.setTypeface(finalScoreTypeface);
         //Retrieving the Final Score Text View to set the Text and Typeface: END
 
         //Retrieving the Grade Summary Text View to set the Typeface and the Score Summary: START
-        TextView gradeSummaryTextView = (TextView) finalScoreLayoutView.findViewById(R.id.grade_summary_text_id);
+        TextView gradeSummaryTextView = finalScoreLayoutView.findViewById(R.id.grade_summary_text_id);
         setGradeSummaryText(gradeSummaryTextView, totalScore, noOfQuestions, timeElapsed);
         //Retrieving the Grade Summary Text View to set the Typeface and the Score Summary: END
 
         //Setting Positive Button and its Listener
-        Button retakeButton = (Button) finalScoreLayoutView.findViewById(R.id.retake_button_id);
+        Button retakeButton = finalScoreLayoutView.findViewById(R.id.retake_button_id);
         retakeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +108,7 @@ public class FinalScoreDialogFragment extends DialogFragment {
         });
 
         //Setting Negative Button and its Listener
-        Button quitButton = (Button) finalScoreLayoutView.findViewById(R.id.quit_button_id);
+        Button quitButton = finalScoreLayoutView.findViewById(R.id.quit_button_id);
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

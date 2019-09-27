@@ -50,7 +50,7 @@ import java.util.concurrent.TimeUnit;
  * The Main and the second Activity class of the Quiz app that shows the layout "R.layout.activity_quiz"
  * where the user is presented with the Quiz screen having the questions and options to answer and score
  *
- * @author <a href="mailto:kaushiknsanji@gmail.com">Kaushik N Sanji</a>
+ * @author Kaushik N Sanji
  */
 public class QuizActivity extends AppCompatActivity
         implements CompoundButton.OnCheckedChangeListener,
@@ -230,18 +230,18 @@ public class QuizActivity extends AppCompatActivity
         //Initializing the Fragment for CountDownTimer: END
 
         //Retrieving the Views that will be accessed frequently: START
-        mQuestionNumberTextView = (TextView) findViewById(R.id.question_no_id);
-        mTotalScoreTextView = (TextView) findViewById(R.id.total_score_id);
-        mQuestionTextView = (TextView) findViewById(R.id.question_text_id);
-        mHintTextView = (TextView) findViewById(R.id.hint_text_box_id);
-        mSubmitButtonView = (Button) findViewById(R.id.submit_button_id);
-        mShowHintButtonView = (Button) findViewById(R.id.show_hint_button_id);
-        mImageRedirectButtonView = (ImageButton) findViewById(R.id.image_redirect_button_id);
-        mOptionContainerView = (RelativeLayout) findViewById(R.id.option_container_area_id);
-        mScrollableContentView = (ScrollView) findViewById(R.id.vscroll_content_area_id);
-        mHintContentView = (LinearLayout) findViewById(R.id.hint_content_box_id);
-        mHintImageView = (ImageView) findViewById(R.id.hint_image_id);
-        mCountDownTextView = (TextView) findViewById(R.id.count_down_text_id);
+        mQuestionNumberTextView = findViewById(R.id.question_no_id);
+        mTotalScoreTextView = findViewById(R.id.total_score_id);
+        mQuestionTextView = findViewById(R.id.question_text_id);
+        mHintTextView = findViewById(R.id.hint_text_box_id);
+        mSubmitButtonView = findViewById(R.id.submit_button_id);
+        mShowHintButtonView = findViewById(R.id.show_hint_button_id);
+        mImageRedirectButtonView = findViewById(R.id.image_redirect_button_id);
+        mOptionContainerView = findViewById(R.id.option_container_area_id);
+        mScrollableContentView = findViewById(R.id.vscroll_content_area_id);
+        mHintContentView = findViewById(R.id.hint_content_box_id);
+        mHintImageView = findViewById(R.id.hint_image_id);
+        mCountDownTextView = findViewById(R.id.count_down_text_id);
         //Retrieving the Views that will be accessed frequently: END
 
         //Initializing the RadioButton Monitor ArrayList
@@ -572,16 +572,16 @@ public class QuizActivity extends AppCompatActivity
 
                     switch (optionIndex) {
                         case 1:
-                            buttonView = (CompoundButton) findViewById(R.id.first_option);
+                            buttonView = findViewById(R.id.first_option);
                             break;
                         case 2:
-                            buttonView = (CompoundButton) findViewById(R.id.second_option);
+                            buttonView = findViewById(R.id.second_option);
                             break;
                         case 3:
-                            buttonView = (CompoundButton) findViewById(R.id.third_option);
+                            buttonView = findViewById(R.id.third_option);
                             break;
                         case 4:
-                            buttonView = (CompoundButton) findViewById(R.id.fourth_option);
+                            buttonView = findViewById(R.id.fourth_option);
                             break;
                     }
 
@@ -934,16 +934,16 @@ public class QuizActivity extends AppCompatActivity
                     //Retrieving the existing RadioButton view
                     switch (i) {
                         case 0:
-                            radioButton = (RadioButton) radioGroupView.findViewById(R.id.first_option);
+                            radioButton = radioGroupView.findViewById(R.id.first_option);
                             break;
                         case 1:
-                            radioButton = (RadioButton) radioGroupView.findViewById(R.id.second_option);
+                            radioButton = radioGroupView.findViewById(R.id.second_option);
                             break;
                         case 2:
-                            radioButton = (RadioButton) radioGroupView.findViewById(R.id.third_option);
+                            radioButton = radioGroupView.findViewById(R.id.third_option);
                             break;
                         case 3:
-                            radioButton = (RadioButton) radioGroupView.findViewById(R.id.fourth_option);
+                            radioButton = radioGroupView.findViewById(R.id.fourth_option);
                             break;
                     }
 
@@ -1006,7 +1006,7 @@ public class QuizActivity extends AppCompatActivity
         } else if (screenOrientation == Configuration.ORIENTATION_LANDSCAPE) {
             //When the device was in landscape mode
 
-            TableLayout tableLayout = (TableLayout) mOptionContainerView.findViewById(R.id.option_table_layout);
+            TableLayout tableLayout = mOptionContainerView.findViewById(R.id.option_table_layout);
 
             //Declaring a TableRow to be used
             TableRow tableRow = null;
@@ -1025,16 +1025,16 @@ public class QuizActivity extends AppCompatActivity
                     //Retrieving the existing RadioButton view
                     switch (i) {
                         case 0:
-                            radioButton = (RadioButton) tableLayout.findViewById(R.id.first_option);
+                            radioButton = tableLayout.findViewById(R.id.first_option);
                             break;
                         case 1:
-                            radioButton = (RadioButton) tableLayout.findViewById(R.id.second_option);
+                            radioButton = tableLayout.findViewById(R.id.second_option);
                             break;
                         case 2:
-                            radioButton = (RadioButton) tableLayout.findViewById(R.id.third_option);
+                            radioButton = tableLayout.findViewById(R.id.third_option);
                             break;
                         case 3:
-                            radioButton = (RadioButton) tableLayout.findViewById(R.id.fourth_option);
+                            radioButton = tableLayout.findViewById(R.id.fourth_option);
                             break;
                     }
 
@@ -1374,16 +1374,16 @@ public class QuizActivity extends AppCompatActivity
                     //Retrieving the existing CheckBox view
                     switch (i) {
                         case 0:
-                            checkBox = (CheckBox) mOptionContainerView.findViewById(R.id.first_option);
+                            checkBox = mOptionContainerView.findViewById(R.id.first_option);
                             break;
                         case 1:
-                            checkBox = (CheckBox) mOptionContainerView.findViewById(R.id.second_option);
+                            checkBox = mOptionContainerView.findViewById(R.id.second_option);
                             break;
                         case 2:
-                            checkBox = (CheckBox) mOptionContainerView.findViewById(R.id.third_option);
+                            checkBox = mOptionContainerView.findViewById(R.id.third_option);
                             break;
                         case 3:
-                            checkBox = (CheckBox) mOptionContainerView.findViewById(R.id.fourth_option);
+                            checkBox = mOptionContainerView.findViewById(R.id.fourth_option);
                             break;
                     }
 
@@ -1457,7 +1457,7 @@ public class QuizActivity extends AppCompatActivity
         } else if (screenOrientation == Configuration.ORIENTATION_LANDSCAPE) {
             //When the device was in landscape mode
 
-            TableLayout tableLayout = (TableLayout) mOptionContainerView.findViewById(R.id.option_table_layout);
+            TableLayout tableLayout = mOptionContainerView.findViewById(R.id.option_table_layout);
 
             //Declaring a TableRow to be used
             TableRow tableRow = null;
@@ -1476,16 +1476,16 @@ public class QuizActivity extends AppCompatActivity
                     //Retrieving the existing CheckBox view
                     switch (i) {
                         case 0:
-                            checkBox = (CheckBox) tableLayout.findViewById(R.id.first_option);
+                            checkBox = tableLayout.findViewById(R.id.first_option);
                             break;
                         case 1:
-                            checkBox = (CheckBox) tableLayout.findViewById(R.id.second_option);
+                            checkBox = tableLayout.findViewById(R.id.second_option);
                             break;
                         case 2:
-                            checkBox = (CheckBox) tableLayout.findViewById(R.id.third_option);
+                            checkBox = tableLayout.findViewById(R.id.third_option);
                             break;
                         case 3:
-                            checkBox = (CheckBox) tableLayout.findViewById(R.id.fourth_option);
+                            checkBox = tableLayout.findViewById(R.id.fourth_option);
                             break;
                     }
 
@@ -2319,7 +2319,7 @@ public class QuizActivity extends AppCompatActivity
                     }
 
                     //Highlighting the correct answers
-                    if (!mIsTextualQuestion || (mIsTextualQuestion && grade < 1)) {
+                    if (!mIsTextualQuestion || grade < 1) {
                         //Revealing for textual based question only when the answer is incorrect
                         revealAnswers();
                     }
@@ -2421,7 +2421,7 @@ public class QuizActivity extends AppCompatActivity
             //When the image is downloaded successfully
             mHintImageView.setImageBitmap(mDownloadedBitmap);
 
-        } else if (mDownloadedBitmap == null && !mHintButtonPressed) {
+        } else if (!mHintButtonPressed) {
             //When Hint button is not yet pressed,
             //this will be called when user selects the correct answer without any hint
 
@@ -2502,7 +2502,7 @@ public class QuizActivity extends AppCompatActivity
 
     /**
      * Callback Method of {@link ImageDownloaderTaskFragment}
-     * invoked when the {@link com.example.kaushiknsanji.birdquiz.ImageDownloaderTaskFragment.ImageDownloaderTask} is starting to download the image.
+     * invoked when the {@code ImageDownloaderTask} of {@link ImageDownloaderTaskFragment} is starting to download the image.
      * Method evaluates the Network Connectivity prior to downloading the image
      *
      * @return True when the Network Connectivity is established; false otherwise
@@ -2539,7 +2539,7 @@ public class QuizActivity extends AppCompatActivity
 
     /**
      * Callback Method of {@link ImageDownloaderTaskFragment}
-     * invoked when the {@link ImageDownloaderTaskFragment.ImageDownloaderTask} has successfully downloaded the image.
+     * invoked when the {@code ImageDownloaderTask} of {@link ImageDownloaderTaskFragment} has successfully downloaded the image.
      * This method is used to save the Image downloaded, to a Bitmap variable.
      *
      * @param bitmap        is the Bitmap image that was downloaded
@@ -2572,7 +2572,7 @@ public class QuizActivity extends AppCompatActivity
 
     /**
      * Callback Method of {@link ImageDownloaderTaskFragment}
-     * invoked when the {@link ImageDownloaderTaskFragment.ImageDownloaderTask} has failed to download the image due
+     * invoked when the {@code ImageDownloaderTask} of {@link ImageDownloaderTaskFragment} has failed to download the image due
      * to some intermittent issues. This method is used to log the failure
      * and to set the local bitmap variable to null.
      *
@@ -2600,7 +2600,7 @@ public class QuizActivity extends AppCompatActivity
 
     /**
      * Callback Method of {@link ImageDownloaderTaskFragment}
-     * invoked when the {@link ImageDownloaderTaskFragment.ImageDownloaderTask} is publishing
+     * invoked when the {@code ImageDownloaderTask} of {@link ImageDownloaderTaskFragment} is publishing
      * the Current download task progress to the main thread
      *
      * @param primaryProgress   is the Integer value of the Primary Progress
@@ -2656,16 +2656,16 @@ public class QuizActivity extends AppCompatActivity
                     //Retrieving the corresponding button view
                     switch (i) {
                         case 0:
-                            compoundButtonView = (CompoundButton) findViewById(R.id.first_option);
+                            compoundButtonView = findViewById(R.id.first_option);
                             break;
                         case 1:
-                            compoundButtonView = (CompoundButton) findViewById(R.id.second_option);
+                            compoundButtonView = findViewById(R.id.second_option);
                             break;
                         case 2:
-                            compoundButtonView = (CompoundButton) findViewById(R.id.third_option);
+                            compoundButtonView = findViewById(R.id.third_option);
                             break;
                         case 3:
-                            compoundButtonView = (CompoundButton) findViewById(R.id.fourth_option);
+                            compoundButtonView = findViewById(R.id.fourth_option);
                             break;
                     }
 
@@ -2785,16 +2785,16 @@ public class QuizActivity extends AppCompatActivity
                 //Retrieving the corresponding option button
                 switch (optionIndex) {
                     case 0:
-                        optionButton = (CompoundButton) mOptionContainerView.findViewById(R.id.first_option);
+                        optionButton = mOptionContainerView.findViewById(R.id.first_option);
                         break;
                     case 1:
-                        optionButton = (CompoundButton) mOptionContainerView.findViewById(R.id.second_option);
+                        optionButton = mOptionContainerView.findViewById(R.id.second_option);
                         break;
                     case 2:
-                        optionButton = (CompoundButton) mOptionContainerView.findViewById(R.id.third_option);
+                        optionButton = mOptionContainerView.findViewById(R.id.third_option);
                         break;
                     case 3:
-                        optionButton = (CompoundButton) mOptionContainerView.findViewById(R.id.fourth_option);
+                        optionButton = mOptionContainerView.findViewById(R.id.fourth_option);
                         break;
                 }
 

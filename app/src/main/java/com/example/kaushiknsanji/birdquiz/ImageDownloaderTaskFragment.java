@@ -26,7 +26,7 @@ import java.util.concurrent.TimeoutException;
  * Fragment that manages Custom AsyncTask implemented for downloading an Image
  * from the specified URL
  *
- * @author <a href="mailto:kaushiknsanji@gmail.com">Kaushik N Sanji</a>
+ * @author Kaushik N Sanji
  */
 public class ImageDownloaderTaskFragment extends Fragment {
 
@@ -491,7 +491,7 @@ public class ImageDownloaderTaskFragment extends Fragment {
 
             //Initializing the byte array
             byte[] buf = new byte[4096];
-            int bytesRead = 0;
+            int bytesRead;
 
             //Reading and writing the bytes to the array
             while ((bytesRead = inputStream.read(buf)) > 0) {

@@ -17,7 +17,7 @@ import android.widget.Toast;
  * The first Activity class of the Quiz app that shows the layout "R.layout.activity_welcome"
  * where the user is presented with a brief info and a button to begin the quiz
  *
- * @author <a href="mailto:kaushiknsanji@gmail.com">Kaushik N Sanji</a>
+ * @author Kaushik N Sanji
  */
 public class WelcomeActivity extends AppCompatActivity
         implements View.OnClickListener,
@@ -40,8 +40,8 @@ public class WelcomeActivity extends AppCompatActivity
         Log.i(TAG, "onCreate: Started");
 
         //Retrieving the Views that will be accessed frequently: START
-        mInfoTextView = (TextView) findViewById(R.id.info_text_id);
-        mTitleTextView = (TextView) findViewById(R.id.title_text_id);
+        mInfoTextView = findViewById(R.id.info_text_id);
+        mTitleTextView = findViewById(R.id.title_text_id);
         //Retrieving the Views that will be accessed frequently: END
 
         if (savedInstanceState == null) {
@@ -63,7 +63,7 @@ public class WelcomeActivity extends AppCompatActivity
         setTitleTextView(screenOrientation);
 
         //Setting the listener on the "Begin Quiz" Button (R.id.begin_quiz_button_id)
-        Button beginQuizButton = (Button) findViewById(R.id.begin_quiz_button_id);
+        Button beginQuizButton = findViewById(R.id.begin_quiz_button_id);
         beginQuizButton.setOnClickListener(this);
 
     }
@@ -138,10 +138,8 @@ public class WelcomeActivity extends AppCompatActivity
     @Override
     public void onClick(View view) {
 
-        switch (view.getId()) {
-            case R.id.begin_quiz_button_id:
-                onBeginQuizButtonClicked();
-                break;
+        if (view.getId() == R.id.begin_quiz_button_id) {
+            onBeginQuizButtonClicked();
         }
 
     }

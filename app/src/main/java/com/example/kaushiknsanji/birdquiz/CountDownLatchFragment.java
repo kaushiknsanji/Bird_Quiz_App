@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 /**
  * Fragment class for managing the {@link CountDownTimer} for the quiz
  *
- * @author <a href="mailto:kaushiknsanji@gmail.com">Kaushik N Sanji</a>
+ * @author Kaushik N Sanji
  */
 public class CountDownLatchFragment extends Fragment {
 
@@ -42,7 +42,6 @@ public class CountDownLatchFragment extends Fragment {
     }
 
     //Attaching the activity to the fragment
-    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);

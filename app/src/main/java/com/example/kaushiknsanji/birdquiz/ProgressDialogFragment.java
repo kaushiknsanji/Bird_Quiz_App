@@ -12,7 +12,7 @@ import android.widget.TextView;
 /**
  * DialogFragment class for displaying the Progress of Image Download
  *
- * @author <a href="mailto:kaushiknsanji@gmail.com">Kaushik N Sanji</a>
+ * @author Kaushik N Sanji
  */
 public class ProgressDialogFragment extends DialogFragment {
 
@@ -49,8 +49,8 @@ public class ProgressDialogFragment extends DialogFragment {
         View progressDialogView = layoutInflater.inflate(R.layout.progress_bar_layout, null);
 
         //Initializing the view components
-        mProgressBar = (ProgressBar) progressDialogView.findViewById(R.id.horizontal_progress_bar_id);
-        mTextMessageView = (TextView) progressDialogView.findViewById(R.id.progress_text_id);
+        mProgressBar = progressDialogView.findViewById(R.id.horizontal_progress_bar_id);
+        mTextMessageView = progressDialogView.findViewById(R.id.progress_text_id);
 
         //Setting the Text Message for the ProgressBar
         mTextMessageView.setText(getArguments().getString(TEXT_MESSAGE_STR_KEY));

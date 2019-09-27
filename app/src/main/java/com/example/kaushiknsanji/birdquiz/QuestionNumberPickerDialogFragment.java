@@ -16,7 +16,7 @@ import android.widget.NumberPicker;
  * DialogFragment class to display the Number Picker Dialog
  * for the user to select/enter the number of questions to attempt
  *
- * @author <a href="mailto:kaushiknsanji@gmail.com">Kaushik N Sanji</a>
+ * @author Kaushik N Sanji
  */
 public class QuestionNumberPickerDialogFragment extends DialogFragment {
 
@@ -54,7 +54,6 @@ public class QuestionNumberPickerDialogFragment extends DialogFragment {
     }
 
     //Attaching the Activity to the fragment
-    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -78,7 +77,7 @@ public class QuestionNumberPickerDialogFragment extends DialogFragment {
         View layoutView = layoutInflater.inflate(R.layout.question_number_picker_layout, null);
 
         //Retrieving the NumberPicker
-        NumberPicker numberPicker = (NumberPicker) layoutView.findViewById(R.id.number_picker_id);
+        NumberPicker numberPicker = layoutView.findViewById(R.id.number_picker_id);
         //Setting the Max Value
         numberPicker.setMaxValue(getArguments().getInt(NUMBER_PICKER_MAX_INT_KEY));
         //Setting the Min Value
@@ -99,7 +98,7 @@ public class QuestionNumberPickerDialogFragment extends DialogFragment {
         });
 
         //Setting Positive Button and its listener
-        Button positiveButton = (Button) layoutView.findViewById(R.id.qd_positive_button_id);
+        Button positiveButton = layoutView.findViewById(R.id.qd_positive_button_id);
         positiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,7 +109,7 @@ public class QuestionNumberPickerDialogFragment extends DialogFragment {
         });
 
         //Setting Negative Button and its listener
-        Button negativeButton = (Button) layoutView.findViewById(R.id.qd_negative_button_id);
+        Button negativeButton = layoutView.findViewById(R.id.qd_negative_button_id);
         negativeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
