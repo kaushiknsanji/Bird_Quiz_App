@@ -1,13 +1,14 @@
 # Quiz of Aves
 
-This App has been developed as part of the **Udacity Android Basics Nanodegree Course** for the Exercise Project **"Quiz App"**. **Quiz of Aves** is a _Quiz on Birds_. 
+![GitHub](https://img.shields.io/github/license/kaushiknsanji/Bird_Quiz_App)  ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kaushiknsanji/Bird_Quiz_App)  ![GitHub repo size](https://img.shields.io/github/repo-size/kaushiknsanji/Bird_Quiz_App)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/kaushiknsanji/Bird_Quiz_App)  ![GitHub All Releases](https://img.shields.io/github/downloads/kaushiknsanji/Bird_Quiz_App/total) ![GitHub search hit counter](https://img.shields.io/github/search/kaushiknsanji/Bird_Quiz_App/Quiz%20App) ![Minimum API level](https://img.shields.io/badge/API-16+-yellow)
 
-_Checkout the Latest Release [here](/outputs/quiz_of_aves_2017-07-09.apk)_
+This App has been developed as part of the **Udacity Android Basics Nanodegree Course** for the Exercise Project **"Quiz App"**. **Quiz of Aves** is a _Quiz on Birds_. 
 
 ---
 
 ## App Compatibility
-Android device running with Android OS 4.1 (API Level 16) or above.
+Android device running with Android OS 4.1 (API Level 16) or above. Designed for Phones and NOT for Tablets.
 
 ---
 
@@ -140,11 +141,33 @@ If the Quiz timer elapsed before the completion of the quiz, the final score wil
 
 ---
 
-### Changes planned post submission
+## Branches in this Repository
 
-* Need to move the [questions](/app/src/main/res/values/quiz_strings.xml) and its related stuff to Database and fetch the content from database.
-* Need to move the ping test to a thread other than the UI Thread.
+* **[master](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/master)**
+	* Contains the code submitted for review, along with any review suggestions incorporated.
 
 ---
 
-### Changes done post submission
+## Review from the Reviewer (Udacity)
+
+![Review_Quiz_App](https://user-images.githubusercontent.com/26028981/65774028-16a9a180-e15b-11e9-8c83-449bf942946b.PNG)
+
+---
+
+## License
+
+```
+Copyright 2017 Kaushik N. Sanji
+
+Licensed under the Apache License, Version 2.0 (the "License"); 
+you may not use this file except in compliance with the License. 
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+   
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
