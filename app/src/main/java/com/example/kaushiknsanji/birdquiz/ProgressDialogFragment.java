@@ -16,10 +16,11 @@
 
 package com.example.kaushiknsanji.birdquiz;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -31,7 +32,7 @@ import android.widget.TextView;
  * @author Kaushik N Sanji
  */
 public class ProgressDialogFragment extends DialogFragment {
-
+    //Constant used as Dialog Fragment Tag
     public static final String TAG_PROGRESS_DIALOG = ProgressDialogFragment.class.getSimpleName();
     //Bundle Keys for saving/restoring data
     private static final String TEXT_MESSAGE_STR_KEY = "TextMessageStr";
@@ -54,12 +55,13 @@ public class ProgressDialogFragment extends DialogFragment {
     }
 
     //Creating the Dialog to be shown
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         //Building the Alert Dialog for the ProgressBar
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(requireActivity());
         //Retrieving the Layout Inflater
-        LayoutInflater layoutInflater = getActivity().getLayoutInflater();
+        LayoutInflater layoutInflater = requireActivity().getLayoutInflater();
         //Retrieving the layout of Progress Dialog
         //Passing null since the view will be attached to the dialog
         View progressDialogView = layoutInflater.inflate(R.layout.progress_bar_layout, null);
@@ -69,7 +71,9 @@ public class ProgressDialogFragment extends DialogFragment {
         mTextMessageView = progressDialogView.findViewById(R.id.progress_text_id);
 
         //Setting the Text Message for the ProgressBar
-        mTextMessageView.setText(getArguments().getString(TEXT_MESSAGE_STR_KEY));
+        if (getArguments() != null) {
+            mTextMessageView.setText(getArguments().getString(TEXT_MESSAGE_STR_KEY));
+        }
 
         //Setting the view on the Dialog
         dialogBuilder.setView(progressDialogView);

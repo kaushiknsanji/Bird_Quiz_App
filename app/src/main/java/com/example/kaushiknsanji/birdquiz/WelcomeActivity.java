@@ -167,7 +167,7 @@ public class WelcomeActivity extends AppCompatActivity
         //Initializing the Question Number Picker Dialog
         QuestionNumberPickerDialogFragment questionNumberPickerDialogFragment = QuestionNumberPickerDialogFragment.newInstance(1, mTotalNumberOfQuestions);
         //Displaying the dialog to capture the user input
-        questionNumberPickerDialogFragment.show(getFragmentManager(), "QuestionNumberPicker");
+        questionNumberPickerDialogFragment.show(getSupportFragmentManager(), QuestionNumberPickerDialogFragment.DIALOG_FRAGMENT_TAG);
     }
 
     /**

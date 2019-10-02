@@ -16,7 +16,6 @@
 
 package com.example.kaushiknsanji.birdquiz;
 
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -31,6 +30,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -197,7 +197,7 @@ public class QuizActivity extends AppCompatActivity
 
         }
 
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         //Initializing the Fragment for Current Download Task: START
         mCurrentBitmapTaskFragment = (ImageDownloaderTaskFragment) fragmentManager.findFragmentByTag(ImageDownloaderTaskFragment.TAG_CURRENT_TASK);
         if (mCurrentBitmapTaskFragment == null) {
@@ -329,10 +329,10 @@ public class QuizActivity extends AppCompatActivity
         mActivityStateStr = QuizActivityState.ACTIVE.toString();
 
         //Retrieving the ProgressBar Dialog Fragment
-        ProgressDialogFragment progressDialogFragment = (ProgressDialogFragment) getFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG_PROGRESS_DIALOG);
+        ProgressDialogFragment progressDialogFragment = (ProgressDialogFragment) getSupportFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG_PROGRESS_DIALOG);
 
         //Updating the CountDownTimer: START
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         mCountDownLatchFragment = (CountDownLatchFragment) fragmentManager.findFragmentByTag(CountDownLatchFragment.TAG);
 
         //Retrieving the remaining time in millis
@@ -2616,7 +2616,7 @@ public class QuizActivity extends AppCompatActivity
      */
     @Override
     public void syncProgress(int primaryProgress, int secondaryProgress) {
-        ProgressDialogFragment progressDialogFragment = (ProgressDialogFragment) getFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG_PROGRESS_DIALOG);
+        ProgressDialogFragment progressDialogFragment = (ProgressDialogFragment) getSupportFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG_PROGRESS_DIALOG);
         if (progressDialogFragment != null) {
             //Setting the Progress Values when the ProgressBar Dialog is active
             progressDialogFragment.setProgress(primaryProgress, secondaryProgress);
@@ -2720,7 +2720,7 @@ public class QuizActivity extends AppCompatActivity
         //Initializing the Progress Bar Dialog Fragment
         ProgressDialogFragment progressDialogFragment = ProgressDialogFragment.newInstance(getString(messageId));
         //Displaying the Dialog
-        progressDialogFragment.show(getFragmentManager(), ProgressDialogFragment.TAG_PROGRESS_DIALOG);
+        progressDialogFragment.show(getSupportFragmentManager(), ProgressDialogFragment.TAG_PROGRESS_DIALOG);
 
         //Pausing the CountDownTimer
         if (mCountDownLatchFragment != null) {
@@ -2734,7 +2734,7 @@ public class QuizActivity extends AppCompatActivity
      */
     private void dismissProgressDialog() {
         //Retrieving the Progress Bar Dialog Fragment
-        ProgressDialogFragment progressDialogFragment = (ProgressDialogFragment) getFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG_PROGRESS_DIALOG);
+        ProgressDialogFragment progressDialogFragment = (ProgressDialogFragment) getSupportFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG_PROGRESS_DIALOG);
         if (progressDialogFragment != null) {
             //Dismissing the Progress Bar Dialog when active
             progressDialogFragment.dismiss();
@@ -2758,7 +2758,7 @@ public class QuizActivity extends AppCompatActivity
             //Initializing the Final Score Dialog
             FinalScoreDialogFragment finalScoreDialogFragment = FinalScoreDialogFragment.newInstance(getUserScore(), mNoOfQuestionsToLoad, timeElapsed);
             //Displaying the dialog
-            finalScoreDialogFragment.show(getFragmentManager(), "FinalScoreDialogFragment");
+            finalScoreDialogFragment.show(getSupportFragmentManager(), FinalScoreDialogFragment.DIALOG_FRAGMENT_TAG);
         }
 
     }

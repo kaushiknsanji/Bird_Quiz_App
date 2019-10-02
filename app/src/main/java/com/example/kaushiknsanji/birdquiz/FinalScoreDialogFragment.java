@@ -17,12 +17,13 @@
 package com.example.kaushiknsanji.birdquiz;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -35,8 +36,8 @@ import android.widget.TextView;
  * @author Kaushik N Sanji
  */
 public class FinalScoreDialogFragment extends DialogFragment {
-
-    private static final String TAG = FinalScoreDialogFragment.class.getSimpleName();
+    //Constant used as Dialog Fragment Tag
+    public static final String DIALOG_FRAGMENT_TAG = FinalScoreDialogFragment.class.getSimpleName();
     //Bundle Key constants
     private static final String SCORE_INT_KEY = "Score";
     private static final String NUMBER_OF_QUESTIONS_INT_KEY = "NoOfQuestions";
@@ -79,32 +80,38 @@ public class FinalScoreDialogFragment extends DialogFragment {
     }
 
     //Creating the Dialog to be shown
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         //Building the Alert Dialog for the Final Score
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(requireActivity());
         //Retrieving the Layout Inflater
-        LayoutInflater layoutInflater = getActivity().getLayoutInflater();
+        LayoutInflater layoutInflater = requireActivity().getLayoutInflater();
         //Retrieving the layout of Final Score
         //(Passing null since the view will be attached to the dialog)
         View finalScoreLayoutView = layoutInflater.inflate(R.layout.final_score_layout, null);
 
         //Retrieving the arguments passed
         Bundle args = getArguments();
-        int totalScore = args.getInt(SCORE_INT_KEY);
-        int noOfQuestions = args.getInt(NUMBER_OF_QUESTIONS_INT_KEY);
-        boolean timeElapsed = args.getBoolean(TIME_ELAPSED_BOOL_KEY);
+        int totalScore = 0;
+        int noOfQuestions = 0;
+        boolean timeElapsed = false;
+        if (args != null) {
+            totalScore = args.getInt(SCORE_INT_KEY);
+            noOfQuestions = args.getInt(NUMBER_OF_QUESTIONS_INT_KEY);
+            timeElapsed = args.getBoolean(TIME_ELAPSED_BOOL_KEY);
+        }
 
         //Retrieving the Title View and setting the Typeface: START
         TextView titleTextView = finalScoreLayoutView.findViewById(R.id.final_score_title_text_id);
-        Typeface titleTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/coprgtb.ttf");
+        Typeface titleTypeface = Typeface.createFromAsset(requireActivity().getAssets(), "fonts/coprgtb.ttf");
         titleTextView.setTypeface(titleTypeface);
         //Retrieving the Title View and setting the Typeface: END
 
         //Retrieving the Final Score Text View to set the Text and Typeface: START
         TextView finalScoreTextView = finalScoreLayoutView.findViewById(R.id.final_score_text_id);
         finalScoreTextView.setText(getString(R.string.final_score_text, totalScore, noOfQuestions));
-        Typeface finalScoreTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/rothenbg.ttf");
+        Typeface finalScoreTypeface = Typeface.createFromAsset(requireActivity().getAssets(), "fonts/rothenbg.ttf");
         finalScoreTextView.setTypeface(finalScoreTypeface);
         //Retrieving the Final Score Text View to set the Text and Typeface: END
 
@@ -184,7 +191,7 @@ public class FinalScoreDialogFragment extends DialogFragment {
         //Setting the summary on the TextView
         gradeSummaryTextView.setText(summaryTextStr);
         //Setting the Typeface
-        Typeface gradeSummaryTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/quintessential_regular.ttf");
+        Typeface gradeSummaryTypeface = Typeface.createFromAsset(requireActivity().getAssets(), "fonts/quintessential_regular.ttf");
         gradeSummaryTextView.setTypeface(gradeSummaryTypeface);
     }
 

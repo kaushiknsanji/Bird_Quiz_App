@@ -17,11 +17,12 @@
 package com.example.kaushiknsanji.birdquiz;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +36,9 @@ import android.widget.NumberPicker;
  * @author Kaushik N Sanji
  */
 public class QuestionNumberPickerDialogFragment extends DialogFragment {
-
+    //Constant used as Dialog Fragment Tag
+    public static final String DIALOG_FRAGMENT_TAG = QuestionNumberPickerDialogFragment.class.getSimpleName();
+    //Constant used for logs
     private static final String TAG = QuestionNumberPickerDialogFragment.class.getSimpleName();
     //Bundle Key constants
     private static final String NUMBER_PICKER_MAX_INT_KEY = "MaxValue";
@@ -82,22 +85,25 @@ public class QuestionNumberPickerDialogFragment extends DialogFragment {
     }
 
     //Creating the Dialog to be shown
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         //Building the Alert dialog for the picker
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(requireActivity());
         //Retrieving the Layout Inflater
-        LayoutInflater layoutInflater = getActivity().getLayoutInflater();
+        LayoutInflater layoutInflater = requireActivity().getLayoutInflater();
         //Retrieving the Question Number Picker view
         //(passing null since the view will be attached to dialog)
         View layoutView = layoutInflater.inflate(R.layout.question_number_picker_layout, null);
 
         //Retrieving the NumberPicker
         NumberPicker numberPicker = layoutView.findViewById(R.id.number_picker_id);
-        //Setting the Max Value
-        numberPicker.setMaxValue(getArguments().getInt(NUMBER_PICKER_MAX_INT_KEY));
-        //Setting the Min Value
-        numberPicker.setMinValue(getArguments().getInt(NUMBER_PICKER_MIN_INT_KEY));
+        if (getArguments() != null) {
+            //Setting the Max Value
+            numberPicker.setMaxValue(getArguments().getInt(NUMBER_PICKER_MAX_INT_KEY));
+            //Setting the Min Value
+            numberPicker.setMinValue(getArguments().getInt(NUMBER_PICKER_MIN_INT_KEY));
+        }
 
         //Defaulting the selected value as 2
         mSelectedValue = 2;

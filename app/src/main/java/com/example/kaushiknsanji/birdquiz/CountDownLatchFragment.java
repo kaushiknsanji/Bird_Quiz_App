@@ -17,11 +17,12 @@
 package com.example.kaushiknsanji.birdquiz;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 
 /**
  * Fragment class for managing the {@link CountDownTimer} for the quiz
