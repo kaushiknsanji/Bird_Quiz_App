@@ -47,9 +47,10 @@ import java.util.concurrent.TimeoutException;
  */
 public class ImageDownloaderTaskFragment extends Fragment {
 
-    //Declaring TAGS for two download tasks
+    //Declaring Fragment Tags for two download tasks
     public static final String TAG_CURRENT_TASK = ImageDownloaderTaskFragment.class.getSimpleName() + "_CURRENT";
     public static final String TAG_FUTURE_TASK = ImageDownloaderTaskFragment.class.getSimpleName() + "_FUTURE";
+    //Constant used for logs
     private static final String TAG = ImageDownloaderTaskFragment.class.getSimpleName();
     //Bundle Key Constants for saving/restoring
     private static final String TASK_STATE_STR_KEY = "TaskState";
@@ -75,6 +76,14 @@ public class ImageDownloaderTaskFragment extends Fragment {
         super.onAttach(context);
         try {
             mDownloaderListener = (ImageDownloaderListener) context;
+            //Re-registering the Listener on Download Tasks if present
+            if (mCurrentBitmapDownloadTask != null) {
+                //When the download is for the Current Task Fragment
+                mCurrentBitmapDownloadTask.setDownloaderListener(mDownloaderListener);
+            } else if (mFutureBitmapDownloadTask != null) {
+                //When the download is for the Future Task Fragment
+                mFutureBitmapDownloadTask.setDownloaderListener(mDownloaderListener);
+            }
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + " must implement ImageDownloaderListener");
         }
@@ -86,6 +95,14 @@ public class ImageDownloaderTaskFragment extends Fragment {
         super.onAttach(activity);
         try {
             mDownloaderListener = (ImageDownloaderListener) activity;
+            //Re-registering the Listener on Download Tasks if present
+            if (mCurrentBitmapDownloadTask != null) {
+                //When the download is for the Current Task Fragment
+                mCurrentBitmapDownloadTask.setDownloaderListener(mDownloaderListener);
+            } else if (mFutureBitmapDownloadTask != null) {
+                //When the download is for the Future Task Fragment
+                mFutureBitmapDownloadTask.setDownloaderListener(mDownloaderListener);
+            }
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement ImageDownloaderListener");
         }
@@ -108,26 +125,40 @@ public class ImageDownloaderTaskFragment extends Fragment {
      */
     public String getDownloadTaskState(int questionIndex) {
         if (questionIndex == mQuestionIndex) {
-            //Returning the value when the task is of the index passed
-            return mTaskStateStr;
+            //Returning the value when the task is of the Index passed
+            if (mCurrentBitmapDownloadTask != null) {
+                //If the task is for the Current task
+                return mCurrentBitmapDownloadTask.getTaskStateStr(mQuestionIndex);
+            } else if (mFutureBitmapDownloadTask != null) {
+                //If the task is for the Future task
+                return mFutureBitmapDownloadTask.getTaskStateStr(mQuestionIndex);
+            }
         }
 
-        //Returning the value of stopped when the question index
+        //Returning the value of STOPPED when the question index
         //does not match with the task
         return TaskState.TASK_STATE_STOPPED.toString();
     }
 
     /**
-     * Method that returns the Bitmap Image of the provided Question Index on the task
+     * Method that returns the downloaded Bitmap Image of the provided Question Index on the task
      *
      * @param questionIndex is the Integer identifier of the Question for which the
      *                      Image downloaded by the task is required
      * @return Bitmap containing the Image downloaded by the task
+     * or {@code null} when the question index does not match with the task
      */
+    @Nullable
     public Bitmap getDownloadedBitmap(int questionIndex) {
         if (questionIndex == mQuestionIndex) {
             //Returning the Image when the Task is of the Index passed
-            return mDownloadedBitmap;
+            if (mCurrentBitmapDownloadTask != null) {
+                //If the task is for the Current task
+                return mCurrentBitmapDownloadTask.getDownloadedBitmap(mQuestionIndex);
+            } else if (mFutureBitmapDownloadTask != null) {
+                //If the task is for the Future task
+                return mFutureBitmapDownloadTask.getDownloadedBitmap(mQuestionIndex);
+            }
         }
         //Returning null when the question index does not match with the task
         return null;
@@ -171,10 +202,7 @@ public class ImageDownloaderTaskFragment extends Fragment {
         //Setting the Future Task to null
         mFutureBitmapDownloadTask = null;
 
-        //Initializing the Current Task
-        mCurrentBitmapDownloadTask = new ImageDownloaderTask();
-
-        //loading the values
+        //Loading the values
         mQuestionIndex = questionIndex;
         mImageURLStr = imageURLStr;
 
@@ -184,13 +212,11 @@ public class ImageDownloaderTaskFragment extends Fragment {
         //Setting the Task state to STARTED
         mTaskStateStr = TaskState.TASK_STATE_STARTED.toString();
 
-        //Waiting for the Listener to attach if restarted
-        while (mDownloaderListener == null) ;
-
         //Evaluating the Internet Connectivity
         if (mDownloaderListener.isNetworkConnected()) {
-            //Starting the download task when the Network is active
-            mCurrentBitmapDownloadTask.execute(mImageURLStr);
+            //Initializing and starting the download for Current task when the Network is active
+            mCurrentBitmapDownloadTask = new ImageDownloaderTask(mDownloaderListener, mQuestionIndex, mDownloadedBitmap, true);
+            mCurrentBitmapDownloadTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, mImageURLStr);
         } else {
             //Exiting with Error when the Network is inactive
             mDownloaderListener.onDownloadError(mImageURLStr, mQuestionIndex);
@@ -214,10 +240,7 @@ public class ImageDownloaderTaskFragment extends Fragment {
         //Setting the Current Task to null
         mCurrentBitmapDownloadTask = null;
 
-        //Initializing the Future Task
-        mFutureBitmapDownloadTask = new ImageDownloaderTask();
-
-        //loading the values
+        //Loading the values
         mQuestionIndex = questionIndex;
         mImageURLStr = imageURLStr;
 
@@ -227,13 +250,11 @@ public class ImageDownloaderTaskFragment extends Fragment {
         //Setting the Task state to STARTED
         mTaskStateStr = TaskState.TASK_STATE_STARTED.toString();
 
-        //Waiting for the Listener to attach if restarted
-        while (mDownloaderListener == null) ;
-
         //Evaluating the Internet Connectivity
         if (mDownloaderListener.isNetworkConnected()) {
-            //Starting the download task when the Network is active
-            mFutureBitmapDownloadTask.execute(mImageURLStr);
+            //Initializing and starting the download for Future task when the Network is active
+            mFutureBitmapDownloadTask = new ImageDownloaderTask(mDownloaderListener, mQuestionIndex, mDownloadedBitmap, false);
+            mFutureBitmapDownloadTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, mImageURLStr);
         } else {
             //Exiting with Error when the Network is inactive
             mDownloaderListener.onDownloadError(mImageURLStr, mQuestionIndex);
@@ -300,12 +321,10 @@ public class ImageDownloaderTaskFragment extends Fragment {
 
     //Saving the state of ImageDownloaderTaskFragment to Bundle
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-
-        outState.putString(TASK_STATE_STR_KEY, mTaskStateStr);
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString(TASK_STATE_STR_KEY, getDownloadTaskState(mQuestionIndex));
         outState.putInt(QUESTION_INDEX_INT_KEY, mQuestionIndex);
         outState.putString(IMAGE_URL_STR_KEY, mImageURLStr);
-
         super.onSaveInstanceState(outState);
     }
 
@@ -338,15 +357,16 @@ public class ImageDownloaderTaskFragment extends Fragment {
      */
     private Bundle getFragmentContent() {
 
+        //Bundle to store the Current Fragment's content
         Bundle bundle = new Bundle();
+        //Reading the Task state
+        mTaskStateStr = getDownloadTaskState(mQuestionIndex);
 
         if (mTaskStateStr.equals(TaskState.TASK_STATE_COMPLETED.toString())) {
             //Updating Bundle on Task Complete state
-
             bundle.putString(TASK_STATE_STR_KEY, mTaskStateStr);
             bundle.putInt(QUESTION_INDEX_INT_KEY, mQuestionIndex);
             bundle.putString(IMAGE_URL_STR_KEY, mImageURLStr);
-
         }
 
         //Returning the Bundle prepared
@@ -354,23 +374,26 @@ public class ImageDownloaderTaskFragment extends Fragment {
     }
 
     /**
-     * Method that copies the content of a Fragment to another Fragment of the same type
+     * Method that copies the Task content of a Fragment to the Current Task of the calling Fragment
      *
-     * @param taskFragment is the Fragment of the same type which is the source for copy
+     * @param sourceTaskFragment is the source Fragment for copying the Task data
      */
-    public void copy(ImageDownloaderTaskFragment taskFragment) {
+    public void copyToCurrent(ImageDownloaderTaskFragment sourceTaskFragment) {
 
-        Bundle bundle = taskFragment.getFragmentContent();
+        //Get the Source Fragment's content
+        Bundle bundle = sourceTaskFragment.getFragmentContent();
 
         if (bundle.size() > 0) {
             //Copying from the bundle if it contains data
-
             mTaskStateStr = bundle.getString(TASK_STATE_STR_KEY);
             mQuestionIndex = bundle.getInt(QUESTION_INDEX_INT_KEY);
             mImageURLStr = bundle.getString(IMAGE_URL_STR_KEY);
             //Retrieving the Image from the Bitmap Cache
             mDownloadedBitmap = BitmapImageCache.getBitmapFromCache(mImageURLStr);
-
+            //Replacing the Task content of Current Task
+            if (mCurrentBitmapDownloadTask != null) {
+                mCurrentBitmapDownloadTask.replaceTask(mQuestionIndex, mImageURLStr, mDownloadedBitmap, mTaskStateStr);
+            }
         }
 
     }
@@ -432,10 +455,38 @@ public class ImageDownloaderTaskFragment extends Fragment {
     /**
      * Custom AsyncTask implemented for downloading an Image from the specified URL
      */
-    private class ImageDownloaderTask extends AsyncTask<String, Integer, Bitmap> {
+    private static class ImageDownloaderTask extends AsyncTask<String, Integer, Bitmap> {
 
         //Stores the Content Length of the image being downloaded
         private int mContentLength;
+        //Instance of the interface to deliver action events
+        private ImageDownloaderListener mDownloaderListener;
+        //Stores the Question Index of the download task
+        private int mQuestionIndex;
+        //Stores the states for the download task (Defaulted to STARTED)
+        private String mTaskStateStr = TaskState.TASK_STATE_STARTED.toString();
+        //Stores the Image downloaded
+        private Bitmap mDownloadedBitmap;
+        //Stored whether the download task is for the Current Question
+        private boolean mIsCurrentTask;
+        //Stores the Image URL of the download task
+        private String mImageURLStr;
+
+        /**
+         * Constructor of {@link ImageDownloaderTask}
+         *
+         * @param downloaderListener {@link ImageDownloaderListener} instance to deliver action events
+         * @param questionIndex      {@link Integer} value of the Question Index of the Download Task
+         * @param downloadedBitmap   {@link Bitmap} reference to save the downloaded image
+         * @param isCurrent          {@link Boolean} that needs to be {@code true} if the download task
+         *                           is for Current Question; {@code false} otherwise
+         */
+        ImageDownloaderTask(ImageDownloaderListener downloaderListener, int questionIndex, Bitmap downloadedBitmap, boolean isCurrent) {
+            mDownloaderListener = downloaderListener;
+            mQuestionIndex = questionIndex;
+            mDownloadedBitmap = downloadedBitmap;
+            mIsCurrentTask = isCurrent;
+        }
 
         /**
          * Override this method to perform a computation on a background thread. The
@@ -458,7 +509,11 @@ public class ImageDownloaderTaskFragment extends Fragment {
 
             try {
 
-                URL imageURL = new URL(params[0]);
+                //Saving the string containing the Image URL
+                mImageURLStr = params[0];
+
+                //Opening connection to the Image URL
+                URL imageURL = new URL(mImageURLStr);
                 HttpURLConnection urlConnection = (HttpURLConnection) imageURL.openConnection();
                 urlConnection.setConnectTimeout(10000); //Setting timeout to 10 sec
                 urlConnection.connect(); //Opening connection to the resource
@@ -471,7 +526,7 @@ public class ImageDownloaderTaskFragment extends Fragment {
                     bitmapInputStream = urlConnection.getInputStream();
                     bitmap = getBitmapSampledImage(new BufferedInputStream(bitmapInputStream));
                     //Adding the successfully downloaded image to Bitmap Cache
-                    BitmapImageCache.addBitmapToCache(params[0], bitmap);
+                    BitmapImageCache.addBitmapToCache(mImageURLStr, bitmap);
                 }
 
             } catch (MalformedURLException e) {
@@ -498,7 +553,7 @@ public class ImageDownloaderTaskFragment extends Fragment {
          *
          * @param inputStream is the Buffered stream of the URL
          * @return Bitmap containing the image downloaded
-         * @throws IOException
+         * @throws IOException if an I/O error occurs while reading or closing the stream
          */
         private Bitmap getBitmapSampledImage(BufferedInputStream inputStream) throws IOException {
 
@@ -536,8 +591,8 @@ public class ImageDownloaderTaskFragment extends Fragment {
             BitmapFactory.decodeByteArray(imageData, 0, imageData.length, bitmapOptions);
 
             //Setting the required dimensions
-            int reqdWidth = 576;
-            int reqdHeight = 432;
+            int reqdWidth = 480;
+            int reqdHeight = 360;
 
             //Deriving the scaling factor to downsize the image: START
             //Starting with the down scaling factor of 1
@@ -580,7 +635,7 @@ public class ImageDownloaderTaskFragment extends Fragment {
             //Retrieving the progress value
             int progressValue = values[0];
 
-            if (mCurrentBitmapDownloadTask != null) {
+            if (mIsCurrentTask) {
                 //Publishing only for the Current download task
 
                 if (progressValue == 100) {
@@ -604,30 +659,87 @@ public class ImageDownloaderTaskFragment extends Fragment {
         protected void onPostExecute(Bitmap bitmap) {
             super.onPostExecute(bitmap);
 
-            //Waiting for the Listener to attach if restarted
-            while (mDownloaderListener == null) ;
+            if (mDownloaderListener != null) {
+                //When the listener is attached
+                if (bitmap != null) {
+                    //Updating the Image in Fragment
+                    mDownloadedBitmap = bitmap;
 
-            if (bitmap != null) {
-                //Storing the Bitmap downloaded
-                mDownloaderListener.onDownloadFinish(bitmap, mQuestionIndex);
+                    //Storing the Bitmap downloaded
+                    mDownloaderListener.onDownloadFinish(mDownloadedBitmap, mQuestionIndex);
 
-                //Updating the Task state to COMPLETED
-                mTaskStateStr = TaskState.TASK_STATE_COMPLETED.toString();
+                    //Updating the Task state to COMPLETED
+                    mTaskStateStr = TaskState.TASK_STATE_COMPLETED.toString();
 
-                //Updating the Image in Fragment
-                mDownloadedBitmap = bitmap;
+                } else {
+                    //Updating the Image in Fragment to null
+                    mDownloadedBitmap = null;
 
-            } else {
-                //When the image was not downloaded due to some error
-                mDownloaderListener.onDownloadError(mImageURLStr, mQuestionIndex);
+                    //When the image was not downloaded due to some error
+                    mDownloaderListener.onDownloadError(mImageURLStr, mQuestionIndex);
 
-                //Updating the Task state to FAILED
-                mTaskStateStr = TaskState.TASK_STATE_FAILED.toString();
-
-                //Updating the Image in Fragment to null
-                mDownloadedBitmap = null;
+                    //Updating the Task state to FAILED
+                    mTaskStateStr = TaskState.TASK_STATE_FAILED.toString();
+                }
             }
 
+        }
+
+        /**
+         * Setter for the {@link ImageDownloaderListener} instance, which
+         * allows re-register a new listener instance.
+         *
+         * @param downloaderListener Instance of {@link ImageDownloaderListener}
+         */
+        void setDownloaderListener(ImageDownloaderListener downloaderListener) {
+            mDownloaderListener = downloaderListener;
+        }
+
+        /**
+         * Methods that allows to overwrite the {@link ImageDownloaderTask} values.
+         *
+         * @param questionIndex    {@link Integer} value of the Question Index of the Download Task
+         * @param imageURLStr      {@link String} containing the Image URL of the download task
+         * @param downloadedBitmap {@link Bitmap} of the downloaded image
+         * @param taskStateStr     {@link String} containing the state/status of the download task
+         */
+        void replaceTask(int questionIndex, String imageURLStr, Bitmap downloadedBitmap, String taskStateStr) {
+            mQuestionIndex = questionIndex;
+            mImageURLStr = imageURLStr;
+            mDownloadedBitmap = downloadedBitmap;
+            mTaskStateStr = taskStateStr;
+        }
+
+        /**
+         * Method that returns the Task state value of the download task.
+         *
+         * @param questionIndex is the Integer identifier of the Question for which the task state is required
+         * @return String containing the state(STARTED/COMPLETED/FAILED/STOPPED) of the Download Task
+         */
+        String getTaskStateStr(int questionIndex) {
+            if (questionIndex == mQuestionIndex) {
+                return mTaskStateStr;
+            }
+            //Returning the value of STOPPED when the question index
+            //does not match with the task
+            return TaskState.TASK_STATE_STOPPED.toString();
+        }
+
+        /**
+         * Method that returns the downloaded Bitmap Image of the download task.
+         *
+         * @param questionIndex is the Integer identifier of the Question for which the
+         *                      Image downloaded by the task is required
+         * @return Bitmap containing the Image downloaded by the task
+         * or {@code null} when the question index does not match with the task
+         */
+        @Nullable
+        Bitmap getDownloadedBitmap(int questionIndex) {
+            if (questionIndex == mQuestionIndex) {
+                return mDownloadedBitmap;
+            }
+            //Returning null when the question index does not match with the task
+            return null;
         }
 
     }

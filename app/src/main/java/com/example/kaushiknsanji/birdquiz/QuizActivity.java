@@ -1868,7 +1868,7 @@ public class QuizActivity extends AppCompatActivity
             //When the image is already prefetched during the last question
             mDownloadedBitmap = mPrefetchedBitmap;
             //Copying the Future Task Fragment to the Current Task Fragment
-            mCurrentBitmapTaskFragment.copy(mFutureBitmapTaskFragment);
+            mCurrentBitmapTaskFragment.copyToCurrent(mFutureBitmapTaskFragment);
 
         } else {
             //When the image is not prefetched, the image will be downloaded for the current question
@@ -2447,8 +2447,8 @@ public class QuizActivity extends AppCompatActivity
                     .equals(ImageDownloaderTaskFragment.TaskState.TASK_STATE_STARTED.toString())) {
                 //Attempting for download only if the Current Task is still in STARTED state
 
-                //Attempting to load the current image being downloaded within a timeout of 150 millis
-                Bitmap bitmap = mCurrentBitmapTaskFragment.getImageOnDemand(mCurrentQuestionIndex, 150);
+                //Attempting to load the current image being downloaded within a timeout of 15 millis
+                Bitmap bitmap = mCurrentBitmapTaskFragment.getImageOnDemand(mCurrentQuestionIndex, 15);
 
                 if (bitmap != null) {
                     //Showing the image if downloaded successfully
