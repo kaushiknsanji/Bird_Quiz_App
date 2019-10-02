@@ -453,7 +453,7 @@ public class QuizActivity extends AppCompatActivity
         Log.i(TAG, "init: QuestionOrder: " + questionOrderStr);
 
         //Initializing the header text score
-        mTotalScoreTextView.setText("0/" + mNoOfQuestionsToLoad);
+        mTotalScoreTextView.setText(getString(R.string.current_score_format, 0, mNoOfQuestionsToLoad));
 
         //Initializing the integer array of question order
         mQuestionIndexOrderArray = questionOrderStr.split(";");
@@ -508,10 +508,10 @@ public class QuizActivity extends AppCompatActivity
      */
     private void reloadCurrentQuestion(int currentUserScore, String submitButtonStateStr) {
         //updating the question number being displayed
-        mQuestionNumberTextView.setText(mCurrentQuestionNo + "/" + mNoOfQuestionsToLoad);
+        mQuestionNumberTextView.setText(getString(R.string.current_question_number_format, mCurrentQuestionNo, mNoOfQuestionsToLoad));
 
         //updating the score
-        mTotalScoreTextView.setText(currentUserScore + "/" + mNoOfQuestionsToLoad);
+        mTotalScoreTextView.setText(getString(R.string.current_score_format, currentUserScore, mNoOfQuestionsToLoad));
 
         //reinitializing the Question
         initializeQuestion();
@@ -667,7 +667,7 @@ public class QuizActivity extends AppCompatActivity
         mCurrentQuestionNo++;
 
         //updating the question number being displayed
-        mQuestionNumberTextView.setText(mCurrentQuestionNo + "/" + mNoOfQuestionsToLoad);
+        mQuestionNumberTextView.setText(getString(R.string.current_question_number_format, mCurrentQuestionNo, mNoOfQuestionsToLoad));
 
         //initializing the Question
         initializeQuestion();
@@ -2628,7 +2628,7 @@ public class QuizActivity extends AppCompatActivity
      */
     private void advanceUserScore() {
         //Updating the score
-        mTotalScoreTextView.setText((getUserScore() + 1) + "/" + mNoOfQuestionsToLoad);
+        mTotalScoreTextView.setText(getString(R.string.current_score_format, (getUserScore() + 1), mNoOfQuestionsToLoad));
     }
 
     /**

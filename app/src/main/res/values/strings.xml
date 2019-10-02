@@ -14,10 +14,10 @@
   ~ limitations under the License.
   -->
 
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- WelcomeActivity Strings -->
-    <string name="title_text">Quiz of%sAves</string>
-    <string name="info_text">This is a Quiz on Birds. A total of &lt;b&gt;%d&lt;/b&gt; questions
+    <string name="title_text">Quiz of<xliff:g example="\n" id="new_line">%1$s</xliff:g>Aves</string>
+    <string name="info_text">This is a Quiz on Birds. A total of &lt;b&gt;<xliff:g example="10" id="total_questions">%1$d</xliff:g>&lt;/b&gt; questions
         are in this quiz. The questions can be choice based questions &lt;b&gt;(single/multi select option)&lt;/b&gt;
         and also &lt;b&gt;textual questions&lt;/b&gt;. When the question is choice based, it can have a max of &lt;b&gt;4&lt;/b&gt;
         selectable options. For each question, user will be given the option to reattempt with
@@ -45,7 +45,7 @@
     <string name="hint_button_toast_text">Check the hint below…</string>
     <string name="progress_dialog_initial_loading_text">Please wait while loading…</string>
     <string name="progress_dialog_downloading_text">Please wait while downloading image…</string>
-    <string name="default_textual_question_answer_text">Correct answer is &lt;b&gt;%s&lt;/b&gt;.
+    <string name="default_textual_question_answer_text">Correct answer is &lt;b&gt;<xliff:g example="Dodo" id="answer_key">%1$s</xliff:g>&lt;/b&gt;.
         Press the flag button to scroll over to the image</string>
     <string name="default_textual_question_edittext_hint">Input your answer</string>
     <string name="default_textual_question_singular_hint">Identify the bird shown in the image above.
@@ -61,13 +61,15 @@
     <string name="partially_correct_answer_again">That\'s partially correct again!!</string>
     <string name="wrong_answer_hint">Wrong answer!! You may try the Hint now</string>
     <string name="wrong_answer_again">Oops! Wrong answer again!!</string>
-    <string name="timer_text">%1$02d:%2$02d</string>
+    <string name="timer_text"><xliff:g example="04" id="minutes_remaining">%1$02d</xliff:g>:<xliff:g example="20" id="seconds_remaining">%2$02d</xliff:g></string>
     <string name="bad_network_toast_text">BAD NETWORK STATE! PLEASE CHECK CONNECTION</string>
     <string name="on_demand_download_fail_toast_text">Image download could not complete</string>
     <string name="app_resumed_toast_text">Welcome back! Found the Answer?</string>
+    <string name="current_question_number_format"><xliff:g example="4" id="current_question_number">%1$d</xliff:g>/<xliff:g example="10" id="total_questions">%2$d</xliff:g></string>
+    <string name="current_score_format"><xliff:g example="5" id="correct_count">%1$d</xliff:g>/<xliff:g example="10" id="total_questions">%2$d</xliff:g></string>
 
     <!-- Final Score Dialog Strings -->
-    <string name="final_score_text">%1$d of %2$d</string>
+    <string name="final_score_text"><xliff:g example="5" id="correct_count">%1$d</xliff:g> of <xliff:g example="10" id="total_questions">%2$d</xliff:g></string>
     <string name="perfect_score_summary_text">Splendid! Simply Genius!!!</string>
     <string name="avg_score_summary_text">Good going! That\'s an average score. Keep it up.</string>
     <string name="above_avg_score_summary_text">Wow! That\'s an above average score. Keep it up.</string>
