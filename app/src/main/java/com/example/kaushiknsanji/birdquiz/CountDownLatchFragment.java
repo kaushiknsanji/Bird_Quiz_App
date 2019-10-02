@@ -30,7 +30,7 @@ import android.support.v4.app.Fragment;
  * @author Kaushik N Sanji
  */
 public class CountDownLatchFragment extends Fragment {
-
+    //Constant used as Fragment Tag and for logs
     public static final String TAG = CountDownLatchFragment.class.getSimpleName();
     //Bundle Key Constants for saving/restoring
     private static final String MILLIS_IN_FUTURE_REMAINING_LONG_KEY = "MillisInFutureRemaining";
@@ -41,7 +41,7 @@ public class CountDownLatchFragment extends Fragment {
     //Stores the number of millis in the future remaining from the start until the countdown is done
     private long mMillisInFutureRemaining;
     //Stores the Instance of CountDownTimer
-    private CountDownTimer mCountDownTimer;
+    private MyCountDownTimer mCountDownTimer;
     //Stores the CountDownTimer State
     private String mTimerStateStr;
     //Instance of the interface to deliver action events
@@ -53,6 +53,10 @@ public class CountDownLatchFragment extends Fragment {
         super.onAttach(context);
         try {
             mCountDownLatchListener = (CountDownLatchListener) context;
+            //Re-registering the listener if the Timer is initialized
+            if (mCountDownTimer != null) {
+                mCountDownTimer.setCountDownLatchListener(mCountDownLatchListener);
+            }
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + " must implement the interface CountDownLatchListener");
         }
@@ -64,6 +68,10 @@ public class CountDownLatchFragment extends Fragment {
         super.onAttach(activity);
         try {
             mCountDownLatchListener = (CountDownLatchListener) activity;
+            //Re-registering the listener if the Timer is initialized
+            if (mCountDownTimer != null) {
+                mCountDownTimer.setCountDownLatchListener(mCountDownLatchListener);
+            }
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement the interface CountDownLatchListener");
         }
@@ -88,7 +96,7 @@ public class CountDownLatchFragment extends Fragment {
         mMillisInFutureRemaining = millisInFuture;
 
         //Initializing the timer
-        mCountDownTimer = new MyCountDownTimer(mMillisInFutureRemaining, mCountDownInterval);
+        mCountDownTimer = new MyCountDownTimer(mMillisInFutureRemaining, mCountDownInterval, mCountDownLatchListener);
 
         //Starting the timer
         mCountDownTimer.start();
@@ -106,6 +114,11 @@ public class CountDownLatchFragment extends Fragment {
      * @return the value of Millis remaining to complete
      */
     public long getRemainingTimeInMillis() {
+        //Returning the value from the Timer if initialized
+        if (mCountDownTimer != null) {
+            return mCountDownTimer.getMillisInFutureRemaining();
+        }
+        //Else, returning the value stored
         return mMillisInFutureRemaining;
     }
 
@@ -137,13 +150,15 @@ public class CountDownLatchFragment extends Fragment {
      * Method that cancels the {@link CountDownTimer}
      */
     public void cancelTimer() {
+        //Checking if the Timer is initialized
         if (mCountDownTimer != null) {
-            mCountDownTimer.cancel();
+            //Canceling the Timer
+            mCountDownTimer.onCancel();
+            //Saving the Timer state
+            mMillisInFutureRemaining = mCountDownTimer.getMillisInFutureRemaining();
+            mTimerStateStr = mCountDownTimer.getTimerStateStr();
+            //Clearing the Timer reference
             mCountDownTimer = null;
-            //Setting the Timer state to INACTIVE
-            mTimerStateStr = TimerState.INACTIVE.toString();
-            //Sending the cancel/pause event to the Listener
-            mCountDownLatchListener.onTimerCancel();
         }
     }
 
@@ -153,17 +168,20 @@ public class CountDownLatchFragment extends Fragment {
      * @return The string that says "ACTIVE"/"INACTIVE" which are the states of the CountDownTimer
      */
     public String getTimerState() {
+        //Returning the value from the Timer if initialized
+        if (mCountDownTimer != null) {
+            return mCountDownTimer.getTimerStateStr();
+        }
+        //Else, returning the value stored
         return mTimerStateStr;
     }
 
     //Saving the state of CountDownLatchFragment to Bundle
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-
-        outState.putLong(MILLIS_IN_FUTURE_REMAINING_LONG_KEY, mMillisInFutureRemaining);
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putLong(MILLIS_IN_FUTURE_REMAINING_LONG_KEY, getRemainingTimeInMillis());
         outState.putLong(COUNT_DOWN_INTERVAL_LONG_KEY, mCountDownInterval);
-        outState.putString(TIMER_STATE_STR_KEY, mTimerStateStr);
-
+        outState.putString(TIMER_STATE_STR_KEY, getTimerState());
         super.onSaveInstanceState(outState);
     }
 
@@ -229,7 +247,14 @@ public class CountDownLatchFragment extends Fragment {
      * Class that extends the {@link CountDownTimer}
      * and adds implementation to the abstract methods
      */
-    private class MyCountDownTimer extends CountDownTimer {
+    private static class MyCountDownTimer extends CountDownTimer {
+
+        //Stores the number of millis in the future remaining from the start until the countdown is done
+        private long mMillisInFutureRemaining;
+        //Stores the CountDownTimer State (Defaulted to ACTIVE)
+        private String mTimerStateStr = TimerState.ACTIVE.toString();
+        //Instance of the interface to deliver action events
+        private CountDownLatchListener mCountDownLatchListener;
 
         /**
          * @param millisInFuture    The number of millis in the future from the call
@@ -237,9 +262,11 @@ public class CountDownLatchFragment extends Fragment {
          *                          is called.
          * @param countDownInterval The interval along the way to receive
          *                          {@link #onTick(long)} callbacks.
+         * @param countDownLatchListener {@link CountDownLatchListener} instance to deliver action events
          */
-        public MyCountDownTimer(long millisInFuture, long countDownInterval) {
+        MyCountDownTimer(long millisInFuture, long countDownInterval, CountDownLatchListener countDownLatchListener) {
             super(millisInFuture, countDownInterval);
+            mCountDownLatchListener = countDownLatchListener;
         }
 
         /**
@@ -251,10 +278,10 @@ public class CountDownLatchFragment extends Fragment {
         public void onTick(long millisUntilFinished) {
             //Storing the current remaining millis
             mMillisInFutureRemaining = millisUntilFinished;
-            //Waiting on Listener to attach
-            while (mCountDownLatchListener == null) ;
-            //Sending the event to the listener
-            mCountDownLatchListener.updateMillisRemaining(mMillisInFutureRemaining);
+            if (mCountDownLatchListener != null) {
+                //Sending the event to the listener when it is attached
+                mCountDownLatchListener.updateMillisRemaining(mMillisInFutureRemaining);
+            }
         }
 
         /**
@@ -262,18 +289,60 @@ public class CountDownLatchFragment extends Fragment {
          */
         @Override
         public void onFinish() {
-            //Waiting on Listener to attach
-            while (mCountDownLatchListener == null) ;
-            //Updating the timer to 0
-            mMillisInFutureRemaining = 0;
-            //Setting the Timer state to INACTIVE
-            mTimerStateStr = TimerState.INACTIVE.toString();
-            //Sending the final tick to the listener
-            mCountDownLatchListener.updateMillisRemaining(mMillisInFutureRemaining);
-            //Sending the Finish event to the listener
-            mCountDownLatchListener.onTimerFinish();
+            //When the listener is attached
+            if (mCountDownLatchListener != null) {
+                //Updating the timer to 0
+                mMillisInFutureRemaining = 0;
+                //Setting the Timer state to INACTIVE
+                mTimerStateStr = TimerState.INACTIVE.toString();
+                //Sending the final tick to the listener
+                mCountDownLatchListener.updateMillisRemaining(mMillisInFutureRemaining);
+                //Sending the Finish event to the listener
+                mCountDownLatchListener.onTimerFinish();
+            }
         }
 
+        /**
+         * Called when the {@link MyCountDownTimer} needs to be canceled
+         */
+        void onCancel() {
+            //Cancel the CountDown Timer
+            cancel();
+            //Setting the Timer state to INACTIVE
+            mTimerStateStr = TimerState.INACTIVE.toString();
+            //Sending the cancel/pause event to the Listener
+            mCountDownLatchListener.onTimerCancel();
+        }
+
+        /**
+         * Setter for the {@link CountDownLatchListener} instance, which
+         * allows re-register a new listener instance.
+         *
+         * @param countDownLatchListener Instance of {@link CountDownLatchListener}
+         */
+        void setCountDownLatchListener(CountDownLatchListener countDownLatchListener) {
+            mCountDownLatchListener = countDownLatchListener;
+        }
+
+        /**
+         * Method to retrieve the time remaining in Millis.
+         *
+         * @return A {@link Long} value containing the number of millis in the future remaining
+         * until the countdown is done
+         */
+        long getMillisInFutureRemaining() {
+            return mMillisInFutureRemaining;
+        }
+
+        /**
+         * Method that returns the State of {@link MyCountDownTimer}
+         *
+         * @return The string that says "ACTIVE"/"INACTIVE" which are
+         * the states of the {@link MyCountDownTimer}
+         */
+        String getTimerStateStr() {
+            return mTimerStateStr;
+        }
     }
 
 }
