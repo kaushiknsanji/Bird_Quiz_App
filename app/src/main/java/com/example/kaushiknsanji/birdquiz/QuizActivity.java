@@ -56,7 +56,6 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -2525,26 +2524,19 @@ public class QuizActivity extends AppCompatActivity
      */
     @Override
     public boolean isNetworkConnected() {
+        //Get the instance of Connectivity Service
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        //Retrieving current active default data network
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        boolean isNetworkConnected = (activeNetworkInfo != null & activeNetworkInfo.isConnected());
+        //Flag to save the connectivity status
+        boolean isNetworkConnected = false;
 
-        //Cross Verifying with Google DNS: START
-        Runtime runtime = Runtime.getRuntime();
-        try {
-            Process process = runtime.exec("/system/bin/ping -c 1 8.8.8.8");
-            int exitValue = process.waitFor();
-            isNetworkConnected = isNetworkConnected && (exitValue == 0);
-        } catch (IOException e) {
-            Log.e(TAG, "isNetworkConnected: IOException: ", e);
-            isNetworkConnected = false;
-        } catch (InterruptedException e) {
-            Log.e(TAG, "isNetworkConnected: InterruptedException: ", e);
-            isNetworkConnected = false;
+        if (connectivityManager != null) {
+            //Retrieving current active default data network
+            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+            //Retrieving the connectivity status
+            isNetworkConnected = (activeNetworkInfo != null && activeNetworkInfo.isConnected());
         }
-        //Cross Verifying with Google DNS: END
 
+        //Displaying a Toast when there is a Network Connectivity issue
         if (!isNetworkConnected) {
             Toast.makeText(this, getString(R.string.bad_network_toast_text), Toast.LENGTH_LONG).show();
         }
