@@ -600,7 +600,9 @@ public class QuizActivity extends AppCompatActivity
                             break;
                     }
 
-                    buttonView.setChecked(true);
+                    if (buttonView != null) {
+                        buttonView.setChecked(true);
+                    }
                 }
 
             }
@@ -768,7 +770,7 @@ public class QuizActivity extends AppCompatActivity
         int existingChildCount = bundleOptionsData.getInt(EXISTING_CHILD_COUNT_INT_KEY);
 
         //Retrieving the child component is CheckBox/RadioButton/EditText
-        String existingTypeStr = bundleOptionsData.getString(EXISTING_CHILD_TYPE_STR_KEY);
+        String existingTypeStr = "" + bundleOptionsData.getString(EXISTING_CHILD_TYPE_STR_KEY);
 
         if (noOfOptions > 1) {
             //When the Number of Options are more than 1 (else it is a text based question)
@@ -962,16 +964,18 @@ public class QuizActivity extends AppCompatActivity
                             break;
                     }
 
-                    //Clearing previous selection if any
-                    if (radioButton.isChecked()) {
-                        radioButton.setChecked(false);
+                    if (radioButton != null) {
+                        if (radioButton.isChecked()) {
+                            //Clearing previous selection if any
+                            radioButton.setChecked(false);
+                        }
+
+                        //Ensuring the RadioButton is enabled
+                        radioButton.setEnabled(true);
+
+                        //Setting Option Text and other Button properties
+                        setOptionButtonProperties(radioButton, optionTextStr);
                     }
-
-                    //Ensuring the RadioButton is enabled
-                    radioButton.setEnabled(true);
-
-                    //Setting Option Text and other Button properties
-                    setOptionButtonProperties(radioButton, optionTextStr);
 
                 } else {
                     //Adding new RadioButton views when required
@@ -1007,7 +1011,7 @@ public class QuizActivity extends AppCompatActivity
 
                 }
 
-                Log.i(TAG, "reuseAddRadioButtonOptions: radioButton: " + radioButton.getText());
+                Log.i(TAG, "reuseAddRadioButtonOptions: radioButton: " + (radioButton != null ? radioButton.getText() : null));
             }
 
             //Removing any extra child views
@@ -1053,26 +1057,28 @@ public class QuizActivity extends AppCompatActivity
                             break;
                     }
 
-                    //Clearing previous selection if any
-                    if (radioButton.isChecked()) {
-                        radioButton.setChecked(false);
-                    }
+                    if (radioButton != null) {
+                        //Clearing previous selection if any
+                        if (radioButton.isChecked()) {
+                            radioButton.setChecked(false);
+                        }
 
-                    //Ensuring the RadioButton is enabled
-                    radioButton.setEnabled(true);
+                        //Ensuring the RadioButton is enabled
+                        radioButton.setEnabled(true);
 
-                    //Setting Option Text and other Button properties
-                    setOptionButtonProperties(radioButton, optionTextStr);
+                        //Setting Option Text and other Button properties
+                        setOptionButtonProperties(radioButton, optionTextStr);
 
-                    if (radioButton.getParent() instanceof TableRow) {
-                        //Retrieving the TableRow
-                        tableRow = (TableRow) radioButton.getParent();
+                        if (radioButton.getParent() instanceof TableRow) {
+                            //Retrieving the TableRow
+                            tableRow = (TableRow) radioButton.getParent();
+                        }
                     }
 
                 } else {
                     //Adding new RadioButton views when required
 
-                    if (tableRow.getChildCount() == 2) {
+                    if ((tableRow != null ? tableRow.getChildCount() : 0) == 2) {
                         //Adding new TableRow for every two RadioButtons added
                         tableRow = new TableRow(this);
                         //Setting TableRow LayoutParams
@@ -1113,18 +1119,20 @@ public class QuizActivity extends AppCompatActivity
                     }
                     //Setting the RadioButton id and Margins: END
 
-                    //Setting the bottom margin for the last TableRow
-                    if ((i + 1) == noOfOptions) {
-                        TableLayout.LayoutParams tableRowLayoutParams = (TableLayout.LayoutParams) tableRow.getLayoutParams();
-                        tableRowLayoutParams.bottomMargin = getResources().getDimensionPixelSize(R.dimen.rad_btn_bottom_margin);
-                    }
+                    if (tableRow != null) {
+                        //Setting the bottom margin for the last TableRow
+                        if ((i + 1) == noOfOptions) {
+                            TableLayout.LayoutParams tableRowLayoutParams = (TableLayout.LayoutParams) tableRow.getLayoutParams();
+                            tableRowLayoutParams.bottomMargin = getResources().getDimensionPixelSize(R.dimen.rad_btn_bottom_margin);
+                        }
 
-                    //Adding RadioButton to TableRow
-                    tableRow.addView(radioButton, radBtnLayoutParams);
+                        //Adding RadioButton to TableRow
+                        tableRow.addView(radioButton, radBtnLayoutParams);
+                    }
 
                 }
 
-                Log.i(TAG, "reuseAddRadioButtonOptions: radioButton: " + radioButton.getText());
+                Log.i(TAG, "reuseAddRadioButtonOptions: radioButton: " + (radioButton != null ? radioButton.getText() : null));
             }
 
             //Removing any extra child views
@@ -1402,16 +1410,18 @@ public class QuizActivity extends AppCompatActivity
                             break;
                     }
 
-                    //Clearing previous selection if any
-                    if (checkBox.isChecked()) {
-                        checkBox.setChecked(false);
+                    if (checkBox != null) {
+                        //Clearing previous selection if any
+                        if (checkBox.isChecked()) {
+                            checkBox.setChecked(false);
+                        }
+
+                        //Ensuring the CheckBox is enabled
+                        checkBox.setEnabled(true);
+
+                        //Setting Option Text and other Button properties
+                        setOptionButtonProperties(checkBox, optionTextStr);
                     }
-
-                    //Ensuring the CheckBox is enabled
-                    checkBox.setEnabled(true);
-
-                    //Setting Option Text and other Button properties
-                    setOptionButtonProperties(checkBox, optionTextStr);
 
                 } else {
                     //Adding new CheckBox views when required
@@ -1458,7 +1468,7 @@ public class QuizActivity extends AppCompatActivity
 
                 }
 
-                Log.i(TAG, "reuseAddCheckBoxOptions: checkBox: " + checkBox.getText());
+                Log.i(TAG, "reuseAddCheckBoxOptions: checkBox: " + (checkBox != null ? checkBox.getText() : null));
             }
 
             //Removing any extra child views
@@ -1504,26 +1514,28 @@ public class QuizActivity extends AppCompatActivity
                             break;
                     }
 
-                    //Clearing previous selection if any
-                    if (checkBox.isChecked()) {
-                        checkBox.setChecked(false);
-                    }
+                    if (checkBox != null) {
+                        //Clearing previous selection if any
+                        if (checkBox.isChecked()) {
+                            checkBox.setChecked(false);
+                        }
 
-                    //Ensuring the CheckBox is enabled
-                    checkBox.setEnabled(true);
+                        //Ensuring the CheckBox is enabled
+                        checkBox.setEnabled(true);
 
-                    //Setting Option Text and other Button properties
-                    setOptionButtonProperties(checkBox, optionTextStr);
+                        //Setting Option Text and other Button properties
+                        setOptionButtonProperties(checkBox, optionTextStr);
 
-                    if (checkBox.getParent() instanceof TableRow) {
-                        //Retrieving the TableRow
-                        tableRow = (TableRow) checkBox.getParent();
+                        if (checkBox.getParent() instanceof TableRow) {
+                            //Retrieving the TableRow
+                            tableRow = (TableRow) checkBox.getParent();
+                        }
                     }
 
                 } else {
                     //Adding new CheckBox views when required
 
-                    if (tableRow.getChildCount() == 2) {
+                    if ((tableRow != null ? tableRow.getChildCount() : 0) == 2) {
                         //Adding new TableRow for every two CheckBoxes added
                         tableRow = new TableRow(this);
                         //Setting TableRow LayoutParams
@@ -1564,18 +1576,20 @@ public class QuizActivity extends AppCompatActivity
                     }
                     //Setting the CheckBox id, relative positions and Margins: END
 
-                    //Setting the bottom margin for the last TableRow
-                    if ((i + 1) == noOfOptions) {
-                        TableLayout.LayoutParams tableRowLayoutParams = (TableLayout.LayoutParams) tableRow.getLayoutParams();
-                        tableRowLayoutParams.bottomMargin = getResources().getDimensionPixelSize(R.dimen.chk_box_bottom_margin);
-                    }
+                    if (tableRow != null) {
+                        //Setting the bottom margin for the last TableRow
+                        if ((i + 1) == noOfOptions) {
+                            TableLayout.LayoutParams tableRowLayoutParams = (TableLayout.LayoutParams) tableRow.getLayoutParams();
+                            tableRowLayoutParams.bottomMargin = getResources().getDimensionPixelSize(R.dimen.chk_box_bottom_margin);
+                        }
 
-                    //adding to the TableRow
-                    tableRow.addView(checkBox, chkBoxLayoutParams);
+                        //adding to the TableRow
+                        tableRow.addView(checkBox, chkBoxLayoutParams);
+                    }
 
                 }
 
-                Log.i(TAG, "reuseAddCheckBoxOptions: checkBox: " + checkBox.getText());
+                Log.i(TAG, "reuseAddCheckBoxOptions: checkBox: " + (checkBox != null ? checkBox.getText() : null));
             }
 
             //Removing any extra child views
@@ -1839,8 +1853,10 @@ public class QuizActivity extends AppCompatActivity
 
         //Initializing the Level List Drawable used for the Option background with Level as 0
         LevelListDrawable optionLevelListDrawable = (LevelListDrawable) ContextCompat.getDrawable(this, R.drawable.option_level_list);
-        optionLevelListDrawable.setLevel(0);
-        buttonView.setBackground(optionLevelListDrawable);
+        if (optionLevelListDrawable != null) {
+            optionLevelListDrawable.setLevel(0);
+            buttonView.setBackground(optionLevelListDrawable);
+        }
 
         //Setting the Text Typeface
         buttonView.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
@@ -2678,8 +2694,10 @@ public class QuizActivity extends AppCompatActivity
                     }
 
                     //Highlighting the drawable of the button by setting the level to 2
-                    LevelListDrawable optionLevelListDrawable = (LevelListDrawable) compoundButtonView.getBackground();
-                    optionLevelListDrawable.setLevel(2);
+                    LevelListDrawable optionLevelListDrawable = (LevelListDrawable) (compoundButtonView != null ? compoundButtonView.getBackground() : null);
+                    if (optionLevelListDrawable != null) {
+                        optionLevelListDrawable.setLevel(2);
+                    }
 
                     countOfAnswersRevealed++; //Updating the count of answers revealed
 
@@ -2807,7 +2825,9 @@ public class QuizActivity extends AppCompatActivity
                 }
 
                 //Disabling the option button
-                optionButton.setEnabled(false);
+                if (optionButton != null) {
+                    optionButton.setEnabled(false);
+                }
             }
             //Iterating over the options to retrieve and disable the button: END
 
