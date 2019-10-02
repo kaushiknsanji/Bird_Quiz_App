@@ -79,7 +79,7 @@
         <item>Starlings</item>
     </string-array>
     <string-array name="hint_1_array">
-        <item>https://www.petinfoclub.com/Images/Starling%%20in%%20colour%%20shutterstock_36832600.jpg</item>
+        <item>https://i.pinimg.com/originals/6e/5a/b0/6e5ab089c301a58f504d0a0ce12a1467.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -94,7 +94,7 @@
         <item>Red-wattled Lapwing</item>
     </string-array>
     <string-array name="hint_2_array">
-        <item>http://i1.treknature.com/photos/10187/lapwing.jpg</item>
+        <item>https://i.pinimg.com/originals/64/14/25/64142526f2a6f528ecb58dfb18a43544.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -109,7 +109,7 @@
         <item>Jacana</item>
     </string-array>
     <string-array name="hint_3_array">
-        <item>http://www.hbw.com/sites/default/files/styles/ibc_1k/public/ibc/p/IMG_5325.JPG?itok=VXAtOQK3</item>
+        <item>https://i.pinimg.com/originals/09/48/71/094871971ff9c175380a374002966716.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -167,7 +167,7 @@
         <item>Puffins</item>
     </string-array>
     <string-array name="hint_7_array">
-        <item>http://randy.agencija-oskar.si/oskar/images/islk/islandija-ptica-puffin-pig.jpg</item>
+        <item>https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/atlantic-puffin-with-mouthful-of-fish-lisa-crawford.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -182,7 +182,7 @@
         <item>Toucan</item>
     </string-array>
     <string-array name="hint_8_array">
-        <item>http://www.animalspot.net/wp-content/uploads/2016/02/Toco-Toucan-Pictures.jpg</item>
+        <item>https://vignette.wikia.nocookie.net/disney-animals/images/3/31/Toco-Toucan-Images.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -197,7 +197,7 @@
         <item>Black Heron</item>
     </string-array>
     <string-array name="hint_9_array">
-        <item>http://animalia-life.club/data_images/black-heron/black-heron2.jpg</item>
+        <item>https://i.pinimg.com/originals/ea/0d/26/ea0d264c69cfe3cd75f38d3a19d7c26b.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -212,7 +212,7 @@
         <item>Cape Gannets</item>
     </string-array>
     <string-array name="hint_10_array">
-        <item>http://m3.i.pbase.com/o6/38/391838/1/119345973.nihHGGC6.GannetDive.jpg</item>
+        <item>https://c5b07b0271f23dfd6dc4-56aa7e47ca4c357fd24ff42aa2f3b266.ssl.cf1.rackcdn.com/500-gannet.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -270,7 +270,7 @@
         <item>Hummingbirds</item>
     </string-array>
     <string-array name="hint_14_array">
-        <item>http://www.hummingbirdsplus.org/wp-content/uploads/2015/09/Attracting-Hummingbirds1.jpg</item>
+        <item>https://i.pinimg.com/originals/fb/63/dc/fb63dcb9ed11be2c0721bc53d44c2401.jpg</item>
         <item>@string/default_textual_question_plural_hint</item>
     </string-array>
 
@@ -284,7 +284,7 @@
         <item>Arctic Tern</item>
     </string-array>
     <string-array name="hint_15_array">
-        <item>http://www.arctictern.info/carsten/images/highres/carsten_egevang_1994.jpg</item>
+        <item>https://farm9.staticflickr.com/8882/27940098003_ecfd062a7f_b.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -346,7 +346,7 @@
         <item>Skimmers</item>
     </string-array>
     <string-array name="hint_19_array">
-        <item>http://nc.audubon.org/sites/g/files/amh416/f/styles/hero_image/public/black_skimmers_bill_stripling.jpg?itok=rEDuqdvJ</item>
+        <item>http://animalsbirds.com/wp-content/uploads/2017/03/Black-Skimmer-birds.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -375,7 +375,7 @@
         <item>Swift</item>
     </string-array>
     <string-array name="hint_21_array">
-        <item>http://fatbirder.com/photos/1789whiterumpedswift61485728896.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/commons/8/8a/White-rumped_swift%2C_Apus_caffer%2C_at_Suikerbosrand_Nature_Reserve%2C_Gauteng%2C_South_Africa_%2823057155930%29%2C_crop.jpg</item>
         <item>@string/default_textual_question_singular_hint</item>
     </string-array>
 
@@ -387,7 +387,7 @@
         <item>Kakapo</item>
     </string-array>
     <string-array name="hint_22_array">
-        <item>http://nzbirdsonline.org.nz/sites/all/files/Kakapo_DvW2007.jpg</item>
+        <item>https://i.pinimg.com/originals/37/2d/eb/372deba72d727bf2a099751b908b85e1.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -419,7 +419,7 @@
         <item>Sarus Crane</item>
     </string-array>
     <string-array name="hint_24_array">
-        <item>http://animalsbirds.com/wp-content/uploads/2016/07/Sarus-crane-Bird-Pictures-Images-HD-Wallpapers-29.jpg</item>
+        <item>https://live.staticflickr.com/3314/3479505672_835c2128a5_z.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -434,7 +434,7 @@
         <item>Emperor Penguin</item>
     </string-array>
     <string-array name="hint_25_array">
-        <item>https://www.aboutanimals.com/images/emperor-penguins-820x507.jpg?d8bc0c</item>
+        <item>https://i.pinimg.com/originals/1b/9b/e5/1b9be5002089dd9a13346ab27336fc69.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -446,7 +446,7 @@
         <item>Woodpecker</item>
     </string-array>
     <string-array name="hint_26_array">
-        <item>http://d2fbmjy3x0sdua.cloudfront.net/cdn/farfuture/6n11sc16h1uacEX2BjxCEVvabmjQt0iROPAbeDr5JMs/mtime:1486670177/sites/default/files/styles/article_hero_inline/public/42-56240394_0.jpg?itok=bOlFyPeE</item>
+        <item>http://www.audubon.org/sites/default/files/styles/article_hero_inline/public/42-56240394_0.jpg</item>
         <item>@string/default_textual_question_singular_hint</item>
     </string-array>
 
@@ -498,7 +498,7 @@
         <item>Honeyguides</item>
     </string-array>
     <string-array name="hint_30_array">
-        <item>http://www.outdoorphoto.community/gallery/data/523/NielCilli_474GreaterHoneyGuideMale4904e.jpg</item>
+        <item>https://www.hbw.com/sites/default/files/styles/ibc_2k/public/ibc/p/greater_honeyguide__6310_25feb2012.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -510,7 +510,7 @@
         <item>Penguins</item>
     </string-array>
     <string-array name="hint_31_array">
-        <item>http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Birds/A-G/emperor-penguin-colony.ngsversion.1412630284744.jpg</item>
+        <item>https://i.pinimg.com/originals/25/a6/ba/25a6ba3d722999a782a1dd4c4c2f6921.jpg</item>
         <item>@string/default_textual_question_plural_hint</item>
     </string-array>
 
@@ -522,7 +522,7 @@
         <item>Weavers</item>
     </string-array>
     <string-array name="hint_32_array">
-        <item>https://qph.ec.quoracdn.net/main-qimg-a47e5f0ab3b3a354ffe7c1af3862fe3a-c</item>
+        <item>https://i.pinimg.com/originals/fb/89/4d/fb894dbf9f3b765fac6799f63a059740.jpg</item>
         <item>@string/default_textual_question_plural_hint</item>
     </string-array>
 
@@ -548,7 +548,7 @@
         <item>Common hawk cuckoo</item>
     </string-array>
     <string-array name="hint_34_array">
-        <item>http://voices.nationalgeographic.com/files/2012/11/common-hawk-cuckoo-Dhritiman-Hore-950x633.jpg</item>
+        <item>https://ichef.bbci.co.uk/images/ic/1200x675/p026vfzh.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -563,7 +563,7 @@
         <item>Ostrich</item>
     </string-array>
     <string-array name="hint_35_array">
-        <item>http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Birds/H-P/ostrich-running.ngsversion.1412640507670.jpg</item>
+        <item>https://i.pinimg.com/originals/7c/cc/e2/7ccce2991da419cc90ad60af76fd084f.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -593,7 +593,7 @@
         <item>Crowned Crane</item>
     </string-array>
     <string-array name="hint_37_array">
-        <item>http://www.ownbyphotography.com/Crowned-Cranes.jpg</item>
+        <item>https://i0.wp.com/honoluluzoo.org/wp-content/uploads/2017/01/EAST-AFRICAN-CROWNED-CRANE-054a85t.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -664,7 +664,7 @@
         <item>Lyrebird</item>
     </string-array>
     <string-array name="hint_42_array">
-        <item>http://1photo1day.com/wp-content/uploads/2016/06/Superb-lyrebird-in-Marysville-State-Forest-Australia-20160601.jpg</item>
+        <item>https://i.pinimg.com/originals/a0/2d/1b/a02d1b4549c72fc6ff339425f9dc49ed.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -676,7 +676,7 @@
         <item>Kiwi</item>
     </string-array>
     <string-array name="hint_43_array">
-        <item>http://s3.thingpic.com/images/KM/LkBTGF5MdmtT4P59NkbLotSB.jpeg</item>
+        <item>https://pbs.twimg.com/media/Cm1vwJhWcAAiquy.jpg</item>
         <item>@string/default_textual_question_singular_hint</item>
     </string-array>
 
@@ -688,7 +688,7 @@
         <item>Ostrich</item>
     </string-array>
     <string-array name="hint_44_array">
-        <item>https://cloudfront.safaribookings.com/library/birding/l/Ostrich.jpg</item>
+        <item>https://i.pinimg.com/originals/4d/e2/20/4de220f36f6717a6f6beef63af95f932.jpg</item>
         <item>@string/default_textual_question_singular_hint</item>
     </string-array>
 
@@ -700,7 +700,7 @@
         <item>Great Auk</item>
     </string-array>
     <string-array name="hint_45_array">
-        <item>http://www.telegraph.co.uk/content/dam/science/2016/08/19/great_auk-large_trans_NvBQzQNjv4Bq47yQTQtFVQSsa7Qd7Xcr07qvOVDKL8deB9MmqbBq9Cs.jpg</item>
+        <item>https://public-media.si-cdn.com/filer/c1/71/c1711bba-6b75-452d-be26-504abea341f2/header_cropped.jpg</item>
         <item>@string/default_textual_question_singular_hint</item>
     </string-array>
 
@@ -747,7 +747,7 @@
         <item>Secretary Bird</item>
     </string-array>
     <string-array name="hint_48_array">
-        <item>http://3.bp.blogspot.com/-jtN6M9kMDaE/U8pJchIOHhI/AAAAAAAAc0s/pI5fe5-WhTs/s1600/secretary+bird+HD+Wallpapers+(1).jpg</item>
+        <item>https://i.pinimg.com/originals/e5/3c/aa/e53caa17018fd08f9d9b295ba1755a02.jpg</item>
         <item>@string/default_hint_text</item>
     </string-array>
 
@@ -776,7 +776,7 @@
         <item>Owls</item>
     </string-array>
     <string-array name="hint_50_array">
-        <item>http://www.blazingcariboustudios.com/wp-content/uploads/2016/10/OWLS.jpg</item>
+        <item>https://i0.wp.com/www.facttoss.com/wp-content/uploads/2017/06/owl-group.jpg</item>
         <item>@string/default_textual_question_plural_hint</item>
     </string-array>
 
