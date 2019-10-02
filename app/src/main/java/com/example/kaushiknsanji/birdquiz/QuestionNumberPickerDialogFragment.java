@@ -23,7 +23,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -66,7 +65,7 @@ public class QuestionNumberPickerDialogFragment extends DialogFragment {
         try {
             mListener = (QuestionNumberPickedListener) context;
         } catch (ClassCastException e) {
-            Log.e(TAG, "onAttach: ClassCastException", e);
+            Logger.e(TAG, "onAttach: ClassCastException", e);
             throw new ClassCastException(context.toString() + " must implement QuestionNumberPickedListener");
         }
 
@@ -79,7 +78,7 @@ public class QuestionNumberPickerDialogFragment extends DialogFragment {
         try {
             mListener = (QuestionNumberPickedListener) activity;
         } catch (ClassCastException e) {
-            Log.e(TAG, "onAttach: ClassCastException", e);
+            Logger.e(TAG, "onAttach: ClassCastException", e);
             throw new ClassCastException(activity.toString() + " must implement QuestionNumberPickedListener");
         }
     }

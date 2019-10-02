@@ -23,7 +23,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -53,7 +52,7 @@ public class WelcomeActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        Log.i(TAG, "onCreate: Started");
+        Logger.i(TAG, "onCreate: Started");
 
         //Retrieving the Views that will be accessed frequently: START
         mInfoTextView = findViewById(R.id.info_text_id);
@@ -69,7 +68,7 @@ public class WelcomeActivity extends AppCompatActivity
             //Setting the Info Text
             setInfoTextView();
 
-            Log.i(TAG, "onCreate: Total Number of Questions found: " + mTotalNumberOfQuestions);
+            Logger.i(TAG, "onCreate: Total Number of Questions found: " + mTotalNumberOfQuestions);
         }
 
         //Retrieving the current orientation

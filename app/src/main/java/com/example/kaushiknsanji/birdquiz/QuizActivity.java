@@ -35,7 +35,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.InputType;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -174,7 +173,7 @@ public class QuizActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        Log.i(TAG, "onCreate: Started");
+        Logger.i(TAG, "onCreate: Started");
 
         //Setting the onCreate flag to TRUE
         onCreateInvoked = true;
@@ -182,7 +181,7 @@ public class QuizActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             //If loading for the first time
 
-            Log.i(TAG, "onCreate: Started, launching for the first time");
+            Logger.i(TAG, "onCreate: Started, launching for the first time");
 
             //Retrieving the list of questions from Array resource "question_array"
             mQuestionArray = getResources().getStringArray(R.array.question_array);
@@ -272,7 +271,7 @@ public class QuizActivity extends AppCompatActivity
     protected void onStart() {
         super.onStart();
 
-        Log.i(TAG, "onStart: Started");
+        Logger.i(TAG, "onStart: Started");
 
         //Initializing components only when it was launched for the first time
         if (mFirstTimeLaunch) {
@@ -286,7 +285,7 @@ public class QuizActivity extends AppCompatActivity
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
-        Log.i(TAG, "onRestoreInstanceState");
+        Logger.i(TAG, "onRestoreInstanceState");
 
         mFirstTimeLaunch = savedInstanceState.getBoolean(FIRST_TIME_LAUNCH_BOOL_KEY);
         mCurrentQuestionNo = savedInstanceState.getInt(CURRENT_QUESTION_NO_INT_KEY);
@@ -323,7 +322,7 @@ public class QuizActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
 
-        Log.i(TAG, "onResume: Started");
+        Logger.i(TAG, "onResume: Started");
 
         //Setting the activity state to Active
         mActivityStateStr = QuizActivityState.ACTIVE.toString();
@@ -385,13 +384,13 @@ public class QuizActivity extends AppCompatActivity
     @Override
     protected void onPause() {
         super.onPause();
-        Log.i(TAG, "onPause");
+        Logger.i(TAG, "onPause");
 
         //Setting the activity state to Inactive
         mActivityStateStr = QuizActivityState.INACTIVE.toString();
 
         if (isFinishing()) {
-            Log.i(TAG, "onPause: isFinishing");
+            Logger.i(TAG, "onPause: isFinishing");
 
             //Clearing the Bitmap Cache when the activity is finishing
             BitmapImageCache.clearCache();
@@ -402,7 +401,7 @@ public class QuizActivity extends AppCompatActivity
     //Called by the Activity before Stop, to save the activity's state in the Bundle
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        Log.i(TAG, "onSaveInstanceState");
+        Logger.i(TAG, "onSaveInstanceState");
 
         outState.putStringArray(QUESTION_STR_ARRAY_KEY, mQuestionArray);
         outState.putStringArray(OPTION_STR_ARRAY_KEY, mOptionArray);
@@ -435,7 +434,7 @@ public class QuizActivity extends AppCompatActivity
     protected void onStop() {
         super.onStop();
 
-        Log.i(TAG, "onStop");
+        Logger.i(TAG, "onStop");
 
         //Resetting the flag to false
         onCreateInvoked = false;
@@ -445,12 +444,12 @@ public class QuizActivity extends AppCompatActivity
      * Method to initialize the view components for the first question
      */
     private void init() {
-        Log.i(TAG, "init: Started");
+        Logger.i(TAG, "init: Started");
 
         //Retrieving the questions order
         String questionOrderStr = randomize(mTotalNumberOfQuestions, mNoOfQuestionsToLoad);
 
-        Log.i(TAG, "init: QuestionOrder: " + questionOrderStr);
+        Logger.i(TAG, "init: QuestionOrder: " + questionOrderStr);
 
         //Initializing the header text score
         mTotalScoreTextView.setText(getString(R.string.current_score_format, 0, mNoOfQuestionsToLoad));
@@ -560,7 +559,7 @@ public class QuizActivity extends AppCompatActivity
             //Retrieving the current screen orientation
             int screenOrientation = getResources().getConfiguration().orientation;
 
-            Log.i(TAG, "reloadCurrentQuestion: screenOrientation: " + screenOrientation);
+            Logger.i(TAG, "reloadCurrentQuestion: screenOrientation: " + screenOrientation);
 
             if (noOfKeys > 1) {
                 //When the Number of Answers is more than 1, then the question is CheckBox Option based
@@ -726,7 +725,7 @@ public class QuizActivity extends AppCompatActivity
             mQuestionTextView.setText(Html.fromHtml(currentQuestionStr));
         }
 
-        Log.i(TAG, "initializeQuestion: mQuestionTextView: " + mQuestionTextView.getText());
+        Logger.i(TAG, "initializeQuestion: mQuestionTextView: " + mQuestionTextView.getText());
 
     }
 
@@ -1011,7 +1010,7 @@ public class QuizActivity extends AppCompatActivity
 
                 }
 
-                Log.i(TAG, "reuseAddRadioButtonOptions: radioButton: " + (radioButton != null ? radioButton.getText() : null));
+                Logger.i(TAG, "reuseAddRadioButtonOptions: radioButton: " + (radioButton != null ? radioButton.getText() : null));
             }
 
             //Removing any extra child views
@@ -1132,7 +1131,7 @@ public class QuizActivity extends AppCompatActivity
 
                 }
 
-                Log.i(TAG, "reuseAddRadioButtonOptions: radioButton: " + (radioButton != null ? radioButton.getText() : null));
+                Logger.i(TAG, "reuseAddRadioButtonOptions: radioButton: " + (radioButton != null ? radioButton.getText() : null));
             }
 
             //Removing any extra child views
@@ -1258,7 +1257,7 @@ public class QuizActivity extends AppCompatActivity
                 //adding to the RadioGroup
                 radioGroupView.addView(radioButton, radBtnLayoutParams);
 
-                Log.i(TAG, "addNewRadioButtonOptions: radioButton: " + radioButton.getText());
+                Logger.i(TAG, "addNewRadioButtonOptions: radioButton: " + radioButton.getText());
             }
 
             //adding RadioGroup to the layout
@@ -1336,7 +1335,7 @@ public class QuizActivity extends AppCompatActivity
                 //Adding RadioButton to TableRow
                 tableRow.addView(radioButton, radBtnLayoutParams);
 
-                Log.i(TAG, "addNewRadioButtonOptions: radioButton: " + radioButton.getText());
+                Logger.i(TAG, "addNewRadioButtonOptions: radioButton: " + radioButton.getText());
             }
 
             //Adding TableLayout to "R.id.option_container_area_id"
@@ -1468,7 +1467,7 @@ public class QuizActivity extends AppCompatActivity
 
                 }
 
-                Log.i(TAG, "reuseAddCheckBoxOptions: checkBox: " + (checkBox != null ? checkBox.getText() : null));
+                Logger.i(TAG, "reuseAddCheckBoxOptions: checkBox: " + (checkBox != null ? checkBox.getText() : null));
             }
 
             //Removing any extra child views
@@ -1589,7 +1588,7 @@ public class QuizActivity extends AppCompatActivity
 
                 }
 
-                Log.i(TAG, "reuseAddCheckBoxOptions: checkBox: " + (checkBox != null ? checkBox.getText() : null));
+                Logger.i(TAG, "reuseAddCheckBoxOptions: checkBox: " + (checkBox != null ? checkBox.getText() : null));
             }
 
             //Removing any extra child views
@@ -1669,7 +1668,7 @@ public class QuizActivity extends AppCompatActivity
                 //adding to the layout "R.id.option_container_area_id"
                 mOptionContainerView.addView(checkBox, chkBoxLayoutParams);
 
-                Log.i(TAG, "addNewCheckBoxOptions: checkBox: " + checkBox.getText());
+                Logger.i(TAG, "addNewCheckBoxOptions: checkBox: " + checkBox.getText());
             }
 
         } else if (screenOrientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -1743,7 +1742,7 @@ public class QuizActivity extends AppCompatActivity
                 //adding to the TableRow
                 tableRow.addView(checkBox, chkBoxLayoutParams);
 
-                Log.i(TAG, "addNewCheckBoxOptions: checkBox: " + checkBox.getText());
+                Logger.i(TAG, "addNewCheckBoxOptions: checkBox: " + checkBox.getText());
             }
 
             //Adding TableLayout to "R.id.option_container_area_id"
@@ -1869,12 +1868,12 @@ public class QuizActivity extends AppCompatActivity
      * Method that initializes the Answer Hints for the current Question
      */
     private void initializeHints() {
-        Log.i(TAG, "initializeHints: QuestionIndex: " + mCurrentQuestionIndex);
+        Logger.i(TAG, "initializeHints: QuestionIndex: " + mCurrentQuestionIndex);
 
         //Retrieving the Answer Hints Array
         mHintArray = getStringArrayResourceByName("hint", mCurrentQuestionIndex);
 
-        Log.i(TAG, "initializeHints: CurrentHintImage: " + mHintArray[0]);
+        Logger.i(TAG, "initializeHints: CurrentHintImage: " + mHintArray[0]);
 
         //Resetting the Bitmap to null
         mDownloadedBitmap = null;
@@ -1897,7 +1896,7 @@ public class QuizActivity extends AppCompatActivity
                 int imageResourceId = getResources().getIdentifier(mHintArray[0].substring(startIndex + 1, endIndex), "drawable", getPackageName());
                 mDownloadedBitmap = BitmapFactory.decodeResource(getResources(), imageResourceId);
 
-                Log.i(TAG, "initializeHints: CurrentHintImage downloaded from local");
+                Logger.i(TAG, "initializeHints: CurrentHintImage downloaded from local");
 
                 //Dismiss Progress dialog if active
                 dismissProgressDialog();
@@ -1924,12 +1923,12 @@ public class QuizActivity extends AppCompatActivity
         //Getting the next question index
         mFutureQuestionIndex = Integer.parseInt(mQuestionIndexOrderArray[mCurrentQuestionNo]);
 
-        Log.i(TAG, "prefetchNextHintImage: NextQuestionIndex: " + mFutureQuestionIndex);
+        Logger.i(TAG, "prefetchNextHintImage: NextQuestionIndex: " + mFutureQuestionIndex);
 
         //Retrieving the Answer Hints Array
         String[] hintArray = getStringArrayResourceByName("hint", mFutureQuestionIndex);
 
-        Log.i(TAG, "prefetchNextHintImage: NextHintImage: " + hintArray[0]);
+        Logger.i(TAG, "prefetchNextHintImage: NextHintImage: " + hintArray[0]);
 
         //Resetting the Prefetched Bitmap to null
         mPrefetchedBitmap = null;
@@ -2396,7 +2395,7 @@ public class QuizActivity extends AppCompatActivity
                 scrollToView(mQuestionTextView);
 
                 //Loading the Next Question and reinitializing the screen components
-                Log.i(TAG, "onto Next Question: " + mCurrentQuestionNo);
+                Logger.i(TAG, "onto Next Question: " + mCurrentQuestionNo);
                 loadNextQuestion();
 
             } else if (buttonText.equals(getString(R.string.finish_button_text))) {
@@ -2606,7 +2605,7 @@ public class QuizActivity extends AppCompatActivity
      */
     @Override
     public void onDownloadError(String imageURLStr, int questionIndex) {
-        Log.e(TAG, "Failed to download the image - \n" + imageURLStr);
+        Logger.e(TAG, "Failed to download the image - \n" + imageURLStr);
 
         if (questionIndex == mCurrentQuestionIndex) {
             //When the call was made for the current question

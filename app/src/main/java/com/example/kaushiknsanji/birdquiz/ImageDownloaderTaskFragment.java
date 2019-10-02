@@ -26,7 +26,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
@@ -224,7 +223,7 @@ public class ImageDownloaderTaskFragment extends Fragment {
             //Updating the Task state to FAILED
             mTaskStateStr = TaskState.TASK_STATE_FAILED.toString();
 
-            Log.e(TAG, "executeCurrentTask: Failed due to Bad Network Connection");
+            Logger.e(TAG, "executeCurrentTask: Failed due to Bad Network Connection");
         }
 
     }
@@ -262,7 +261,7 @@ public class ImageDownloaderTaskFragment extends Fragment {
             //Updating the Task state to FAILED
             mTaskStateStr = TaskState.TASK_STATE_FAILED.toString();
 
-            Log.e(TAG, "executeFutureTask: Failed due to Bad Network Connection");
+            Logger.e(TAG, "executeFutureTask: Failed due to Bad Network Connection");
         }
 
     }
