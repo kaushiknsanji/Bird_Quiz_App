@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/fsl_score_height"
         android:layout_marginBottom="@dimen/fsl_score_bottom_margin"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:orientation="horizontal"
         android:weightSum="5">
 
@@ -70,7 +70,7 @@
             android:paddingStart="@dimen/fsl_score_text_pad_left"
             android:textColor="@color/fslScoreTextAmber500"
             android:textSize="@dimen/fsl_score_text_size"
-            tools:text="100 of 10" />
+            tools:text="50 of 50" />
 
         <ImageView
             style="@style/fsl_circle_star_style"
