@@ -145,7 +145,19 @@ If the Quiz timer elapsed before the completion of the quiz, the final score wil
 
 * **[master](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/master)**
 	* Contains the code submitted for review, along with any review suggestions incorporated.
-
+* **[release_v1.0](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/release_v1.0)**
+	* Removed Ping Test while evaluating Network Connectivity.
+	* Modified to use the support version of `Fragment`, `DialogFragment`, `FragmentManager` and `AlertDialog`.
+	* Made the inner class `ImageDownloaderTask` of [ImageDownloaderTaskFragment](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/release_v1.0/app/src/main/java/com/example/kaushiknsanji/birdquiz/ImageDownloaderTaskFragment.java) as Static to avoid possible memory leaks, with related required changes. Optimized image downloads by reducing the required size of the Image and using parallel execution of AsyncTasks. Fixed bugs related to Downloaded Image not showing after configuration change.
+	* Used String resources for Score and Question format, which is displayed in the [QuizActivity](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/release_v1.0/app/src/main/java/com/example/kaushiknsanji/birdquiz/QuizActivity.java).
+	* Made the inner class `MyCountDownTimer` of [CountDownLatchFragment](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/release_v1.0/app/src/main/java/com/example/kaushiknsanji/birdquiz/CountDownLatchFragment.java) Static to avoid possible memory leaks, with required related changes.
+	* Used optimized URLs for Images for faster loading of Images.
+	* Added Null checks for possible Null Pointers.
+	* Enabled logging for debuggable build types only, through the use of custom [Logger](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/release_v1.0/app/src/main/java/com/example/kaushiknsanji/birdquiz/Logger.java) which is a wrapper to the `android.util.Log`.
+	* Modified to use `app:srcCompat` for loading drawables in ImageView.
+	* Fixed the [final_score_layout](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/release_v1.0/app/src/main/res/layout/final_score_layout.xml) of [FinalScoreDialogFragment](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/release_v1.0/app/src/main/java/com/example/kaushiknsanji/birdquiz/FinalScoreDialogFragment.java) which was not displaying the final score properly.
+	* Recreated App Icons.
+	
 ---
 
 ## Review from the Reviewer (Udacity)
