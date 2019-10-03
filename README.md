@@ -157,6 +157,7 @@ If the Quiz timer elapsed before the completion of the quiz, the final score wil
 	* Modified to use `app:srcCompat` for loading drawables in ImageView.
 	* Fixed the [final_score_layout](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/release_v1.0/app/src/main/res/layout/final_score_layout.xml) of [FinalScoreDialogFragment](https://github.com/kaushiknsanji/Bird_Quiz_App/tree/release_v1.0/app/src/main/java/com/example/kaushiknsanji/birdquiz/FinalScoreDialogFragment.java) which was not displaying the final score properly.
 	* Recreated App Icons.
+	* Other minor changes to prepare the app for local release.
 	
 ---
 
