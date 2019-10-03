@@ -64,6 +64,9 @@
     <dimen name="rad_grp_top_margin">16dp</dimen>
     <dimen name="rad_grp_bottom_margin">16dp</dimen>
     <dimen name="rad_btn_top_margin">12dp</dimen>
+    <dimen name="rad_btn_left_margin">0dp</dimen>
+    <dimen name="rad_btn_right_margin">0dp</dimen>
+    <dimen name="rad_btn_bottom_margin">0dp</dimen>
     <dimen name="chk_box_top_margin_1">16dp</dimen>
     <dimen name="chk_box_top_margin_2">12dp</dimen>
     <dimen name="chk_box_bottom_margin">16dp</dimen>
